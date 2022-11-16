@@ -1,12 +1,44 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :to="{ name: 'MovieView' }">MovieView</router-link>
+      <div v-if="isUserLogin">
+        <router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | 
+        <router-link :to="{ name: 'LogInView' }">LogInPage</router-link>
+      </div>
+      <div v-else>
+
+        <span>{{userName}}님</span>
+        <router-link :to="{ name: 'MyPageView' }">MyPage</router-link>
+        <button @click="logout">Logout</button>
+      </div>
     </nav>
-    <router-view/>
+  <router-view/>
+
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  components:{
+    // MovieView
+  },
+  computed: {
+    userName(){
+      return this.$store.state.username
+    },
+    isUserLogin(){
+      return !this.$store.getters.isLogin
+    }
+  },
+  methods: {
+    logout(){
+      this.$store.commit('LOGOUT')
+    }
+  }
+}
+</script>
 
 <style>
 #app {

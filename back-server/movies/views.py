@@ -18,22 +18,26 @@ from django.http.response import JsonResponse
 @api_view(['GET'])
 def main(request) :
     if request.method == 'GET':
+        # 가장 최근에 개봉한 영화
         latest_movies = Movie.objects.order_by('-release_date').prefetch_related('genres')[:20]
-        highscore_movies = Movie.objects.order_by('-vote_average').prefetch_related('genres')[:20]
-        # like_movies = Movie.objects.order_by('-vote_count').prefetch_related('genres')[:20]
-
         latest_serializer = MovieSerializer(data=latest_movies, many=True)
-        highscore_serializer = MovieSerializer(data=highscore_movies, many=True)
-        # like_serializer = MovieSerializer(data=like_movies, many=True)
+        # print(latest_movies[0].genres.all())
+        latest_serializer.is_valid()
 
-        # print(latest_serializer.is_valid() , highscore_serializer.is_valid() , like_serializer.is_valid())
-        
-        print(latest_serializer.is_valid() , highscore_serializer.is_valid())
+        # 영화 평점 순
+        highscore_movies = Movie.objects.order_by('-vote_average').prefetch_related('genres')[:20]
+        highscore_serializer = MovieSerializer(data=highscore_movies, many=True)
+        highscore_serializer.is_valid()
+
+        # 많은 사람들이 투표한 영화
+        like_movies = Movie.objects.order_by('-vote_count').prefetch_related('genres')[:20]
+        like_serializer = MovieSerializer(data=like_movies, many=True)
+        like_serializer.is_valid()
         
         context={
             'latest_movies' : latest_serializer.data,
             'highscore_movies' : highscore_serializer.data,
-            # 'like_movies' : like_serializer.data,
+            'like_movies' : like_serializer.data,
         }
         return Response(context)
 

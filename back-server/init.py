@@ -14,13 +14,15 @@ def get_movie_datas():
             if movie.get('release_date', ''):
                 fields = {
                     # 'movie_id': movie['id'],
+                    'genres': movie['genre_ids'],
+
                     'title': movie['title'],
                     'release_date': movie['release_date'],
                     'popularity': movie['popularity'],
                     'vote_average': movie['vote_average'],
+                    'vote_count': movie['vote_count'],
                     'overview': movie['overview'],
                     'poster_path': movie['poster_path'],
-                    'genres': movie['genre_ids']
                 }
 
                 data = {
