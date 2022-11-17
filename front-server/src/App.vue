@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <nav>
+    <nav class="navbar bg-black">
+      <a class="navbar-brand" href="#">
+        <img src="/.assets/netflixlogo.png" height=70px alt="">
+      </a>
       <router-link :to="{ name: 'MovieView' }">MovieView</router-link>
       <div v-if="isUserLogin">
         <router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | 
