@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Sign Up Page</h1>
+    <h1 id="SignUpPageMessage">Unlimited movies, TV shows, and more.</h1>
     <form @submit.prevent="signUp">
-      <label for="username">username : </label>
-      <input type="text" id="username" v-model="username"><br>
+      <label for="username"></label>
+      <input type="text" id="username" placeholder="username" v-model="username"><br>
 
       <label for="password1"> password : </label>
       <input type="password" id="password1" v-model="password1"><br>
@@ -42,3 +42,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#SignUpPageMessage{
+  padding: 25px;
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#username{
+  border-color: white;
+}
+
+input::placeholder{
+  font-size: 15px
+}
+</style>
