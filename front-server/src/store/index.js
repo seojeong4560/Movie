@@ -18,7 +18,9 @@ export default new Vuex.Store({
     username: null,
   },
   plugins: [
-    createPersistedState()
+    createPersistedState({
+      storage: window.sessionStorage // store를 session storage 에 유지
+    })
   ],
   getters: {
     isLogin(state){
@@ -30,7 +32,7 @@ export default new Vuex.Store({
       state.latest_movies = movieList.latest_movies
       state.highscore_movies = movieList.highscore_movies
       state.like_movies = movieList.like_movies
-      console.log(state.latest_movies)
+      // console.log(state.latest_movies)
     },
     SAVE_TOKEN(state, name_token){
       state.username = name_token.username

@@ -21,7 +21,7 @@ class MovieSerializer(serializers.ModelSerializer): # 데이터 넣을 때
    
     class Meta : 
         model = Movie
-        fields="__all__"
+        fields = ('id', 'title', 'poster_path')
 
 class MovieDetailSerializer(serializers.ModelSerializer): # 영화상세
     genres = GenreSerializer(many=True, read_only=True)
