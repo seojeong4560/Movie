@@ -59,6 +59,16 @@ export default new Vuex.Store({
         console.log(err)
       })
     },
+    getMovieDetail(context){
+      axios({
+        method: 'get',
+        url: `${API_URL}/api/movies/detail/${this.movieId}`
+      })
+      .then(res => {
+        context.commit('GET_MOVIE_DETAIL',res)
+      })
+      .catch(err => { console.log(err) })
+    },
     signUp(context, payload){
       axios({
         method: 'post',

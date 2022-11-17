@@ -27,7 +27,8 @@ export default {
   data(){
     return {
       movie: Object,
-      same_genres: Array,
+      same_genres: [],
+      movieId: this.$route.params.id
     }
   },
   components:{
@@ -48,7 +49,7 @@ export default {
     getMovieDetail(){
       axios({
         method: 'get',
-        url: `${API_URL}/api/movies/detail/${this.$route.params.id}`
+        url: `${API_URL}/api/movies/detail/${this.movieId}`
       })
       .then(res => {
         // console.log(res)
@@ -57,7 +58,8 @@ export default {
       })
       .catch(err => { console.log(err) })
     }
-  }
+  },
+
 }
 </script>
 

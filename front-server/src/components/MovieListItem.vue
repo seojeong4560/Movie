@@ -2,7 +2,7 @@
   <div>
     <img :src="movieImgURL" alt="" @click="detail">
     <p>{{movie.title}}</p>
-    <router-link :to="{name: 'DetailView', params: { id: movie.id} }">[Detail]</router-link>
+    
   </div>
 </template>
 
@@ -19,9 +19,10 @@ export default {
   },
   methods: {
     detail(){
+      // console.log(this.movie.id)
       return this.$router.push({name: 'DetailView', params: { id: this.movie.id } })
     }
-  }
+  },
 }
 </script>
 
