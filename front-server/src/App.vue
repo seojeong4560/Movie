@@ -7,7 +7,6 @@
         <router-link :to="{ name: 'LogInView' }">LogInPage</router-link>
       </div>
       <div v-else>
-
         <span>{{userName}}님</span>
         <router-link :to="{ name: 'MyPageView' }">MyPage</router-link>
         <button @click="logout">Logout</button>
