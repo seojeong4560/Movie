@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <nav class="navbar bg-black">
+    <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src="/.assets/netflixlogo.png" height=70px alt="">
+        <img src=""  height=70px alt="logo">
       </a>
-      <router-link :to="{ name: 'MovieView' }">MovieView</router-link>
       <div v-if="isUserLogin">
-        <router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | 
-        <router-link :to="{ name: 'LogInView' }">LogInPage</router-link>
+        <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>
+        <li class="nitem"><router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | </li>
+        <li class="nitem"><router-link :to="{ name: 'LogInView' }">LogInPage</router-link></li>
+        
       </div>
       <div v-else>
         <span>{{userName}}님</span>
@@ -54,6 +55,10 @@ export default {
 </script>
 
 <style>
+body{
+  background-image: url("D:\Desktop\final_pjt\final_pjt\front-server\src\assets\background.jpg")
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -63,15 +68,30 @@ export default {
 }
 
 nav {
+  margin: 20px;
+  display: flex;
+  justify-content: space-between;
   padding: 30px;
+  display: grid;
+  grid-template-columns: 600px 1fr;
+  text-align: center;
+  
+}
+
+.nitem{
+  display: flex;
+  float: left;
+  padding: 15px;
 }
 
 nav a {
+  text-decoration: none;
   font-weight: bold;
-  color: #2c3e50;
+  color: white;
+  font-size: 20px;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: red;
 }
 </style>
