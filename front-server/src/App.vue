@@ -2,18 +2,19 @@
   <div id="app">
     <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src=""  height=70px alt="logo">
+        <img src="https://i.ibb.co/r5krrdz/logo.png"  height=40px alt="logo">
       </a>
       <div v-if="isUserLogin">
         <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>
-        <li class="nitem"><router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link> | </li>
+        <li class="nitem"><router-link :to="{ name: 'SignUpView' }">SignUpPage</router-link></li>
         <li class="nitem"><router-link :to="{ name: 'LogInView' }">LogInPage</router-link></li>
         
       </div>
       <div v-else>
-        <span>{{userName}}님</span>
-        <router-link :to="{ name: 'MyPageView' }">MyPage</router-link>
-        <button @click="logout">Logout</button>
+        <span id="uname">{{userName}}</span>
+        <span id="uname2">님</span>
+        <router-link :to="{ name: 'MyPageView' }" id="mPage">MyPage</router-link>
+        <span @click="logout" id="lout">Logout</span>
       </div>
     </nav>
   <router-view :key="$route.fullPath"></router-view>
@@ -55,9 +56,10 @@ export default {
 </script>
 
 <style>
-body{
-  background-image: url("D:\Desktop\final_pjt\final_pjt\front-server\src\assets\background.jpg")
-}
+/* body{
+  background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg");  
+  background-repeat: no-repeat;
+} */
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -94,4 +96,36 @@ nav a {
 nav a.router-link-exact-active {
   color: red;
 }
+
+#uname{
+  background-image: linear-gradient(90deg, purple, hotpink, crimson, orange, yellow);
+  /* background-image: linear-gradient(90deg, red, orange, yellow, purple); */
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+  font-size: 27px;
+  
+}
+
+#uname2{
+  font-size: 13px;
+  font-weight: bold;
+  color: azure;
+}
+
+#mPage{
+  margin-left: 27px;
+  font-size: 23px;
+  font-weight: bold;
+  color: azure;
+}
+
+#lout{
+  margin-left: 25px;
+  font-size: 23px;
+  font-weight: bold;
+  color: azure;
+  margin-right: 15px;
+}
+
 </style>

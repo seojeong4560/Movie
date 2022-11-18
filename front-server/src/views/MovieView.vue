@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>MovieView</h1>
-    <hr>
+    <!-- <h1>MovieView</h1> -->
+    <!-- <hr> -->
     <MovieList :movies="latest_movies"/>
     <MovieList :movies="highscore_movies"/>
     <MovieList :movies="like_movies"/>
@@ -40,5 +40,7 @@ export default {
 </script>
 
 <style>
-
+body{
+  background-color: black;
+}
 </style>

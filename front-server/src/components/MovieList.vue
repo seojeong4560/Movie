@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>MovieList</h2>
+    <h2 id="h2word">관련 동영상</h2>
     <hr>
     <swiper ref="filterSwiper" :options="swiperOption" role="tablist">
       <MovieListItem
@@ -63,4 +63,14 @@ export default {
     }
   }
 }
+</style>
+
+<style>
+#h2word{
+  color: azure;
+  text-align: left;
+  margin-left: 15px;
+  font-size: 28px;
+}
+
 </style>

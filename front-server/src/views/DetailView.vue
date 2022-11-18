@@ -1,18 +1,24 @@
 <template>
   <div>
-    <h1>Detail</h1>
-    <div>
-       <img :src="movieImgURL" alt="">
-       <h3>{{movie.title}}</h3>
-       <p>
+    <br>
+      <img :src="movieImgURL" alt="" id="movieImage">
+      <div id="MVDetail">
+      <h3 id="movieTitle">{{movie.title}}</h3>
+      <p id="genre">
         Genre: 
         <span v-for="genre in genres" :key="genre.id">
           {{ genre.name }} 
         </span>
-       </p>
-       <p>{{movie.overview}}</p>
+      </p>
+      <p id="overview">{{movie.overview}}</p>
+      <button id="btn1" type="button" class="btn btn-danger">Play</button>
+      <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
+      <button id="btn2" type="button" class="btn btn-light">+</button> 
     </div>
+    <div id="movieList">
+      <hr id = "hr">
     <MovieList :movies="same_genres"/>
+    </div>
   </div>
 </template>
 
@@ -64,5 +70,70 @@ export default {
 </script>
 
 <style>
+#movieImage{
+  width: 270px;
+  float: left;
+  margin-left: 30px;
+  margin-right: 20px;
+}
 
+#MVDetail{
+  padding-top: 100px;
+  text-align: left;
+  margin-right: 25px;
+  
+}
+
+#movieTitle{
+  color: azure;
+  font-size: 40px;
+  font-weight: bold;
+  
+  
+}
+
+#genre{
+  color: #babac1;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: normal;
+}
+
+#overview{
+  color: #babac1;
+  white-space: normal;
+} 
+
+#hr{
+  color: #babac1;
+  height: 15px;
+}
+
+#btn1{
+  width: 100px;
+  height: 45px;
+}
+
+#btn2{
+  margin-left: 5px;
+  width: 50px;
+  height: 45px;
+}
+
+#btn3{
+  margin-left: 5px;
+  width: 60px;
+  height: 45px;
+}
+
+#img1{
+  width: 35px;
+  height: 35px;
+}
+
+#movieList{
+  margin-top: 100px;
+  
+  
+}
 </style>
