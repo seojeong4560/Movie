@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar">
       <a class="navbar-brand" href="#">
-        <img src=""  height=70px alt="logo">
+        <img src="https://www.edigitalagency.com.au/wp-content/uploads/Netflix-logo-red-black-png.png"  height=70px alt="logo">
       </a>
       <div v-if="isUserLogin">
         <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>
@@ -56,7 +56,8 @@ export default {
 
 <style>
 body{
-  background-image: url("D:\Desktop\final_pjt\final_pjt\front-server\src\assets\background.jpg")
+  background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg");
+  background-repeat: no-repeat;
 }
 
 #app {
