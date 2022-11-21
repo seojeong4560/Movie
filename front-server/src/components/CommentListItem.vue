@@ -2,8 +2,8 @@
   <div>
     <p>{{ comment.username}}</p>
     <p>{{ comment.content }}</p>
+    <p>수정</p>
     <p>{{ comment.created_at }}</p>
-    <!-- <p @click="updateComment">수정</p> -->
     <button @click="deleteComment">x</button>
   </div>
 </template>
