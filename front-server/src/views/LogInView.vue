@@ -1,4 +1,7 @@
 <template>
+<div>
+  <div class="back"></div>
+  <br><br>
   <div id="Loginbox">
   <form @submit.prevent="logIn">
   <h1 id="LogInPage">LogIn Page</h1>
@@ -14,6 +17,7 @@
       <input id="submit_logIn" type="submit" value="logIn" class="btn btn-danger" >
   </form>
   </div>
+</div>
 </template>
 
 <script>
@@ -41,6 +45,16 @@ export default {
 </script>
 
 <style>
+div.back {
+  width: 100vw;
+  height: 90vh;
+  position: absolute;
+  background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg"); 
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: brightness(65%)
+}
+
 #Loginbox{
   width: 600px;
   height: 500px;

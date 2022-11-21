@@ -1,5 +1,7 @@
 <template>
   <div>
+    <div class="back"></div>
+    <br><br>
     <h1 id="SignUpPageMessage">Unlimited movies, TV shows, and more.</h1>
     <h2 id="SignUpPageMessage2">Watch anywhere. Cancel anytime.</h2>
     <h3 style="color: white; font-size: 20px">Ready to watch? Enter your email to create or restart your membership.</h3>
@@ -45,11 +47,16 @@ export default {
 }
 </script>
 
-<style>
-/* body{
+<style scoped>
+div.back {
+  width: 100vw;
+  height: 90vh;
+  position: absolute;
   background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg"); 
-  
-} */
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: brightness(55%)
+}
 
 #SignUpPageMessage{
   padding: 25px;

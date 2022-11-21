@@ -15,9 +15,11 @@
       <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
       <button id="btn2" type="button" class="btn btn-light">+</button> 
     </div>
+    <br><br>
     <div id="movieList">
       <hr id = "hr">
-    <MovieList :movies="same_genres"/>
+      <h2 id="h2word">관련 영화</h2>
+      <MovieList :movies="same_genres"/>
     </div>
   </div>
 </template>
@@ -65,7 +67,7 @@ export default {
       .catch(err => { console.log(err) })
     }
   },
-
+  
 }
 </script>
 
@@ -135,5 +137,12 @@ export default {
   margin-top: 100px;
   
   
+}
+
+#h2word{
+  color: azure;
+  text-align: left;
+  margin-left: 15px;
+  font-size: 28px;
 }
 </style>
