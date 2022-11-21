@@ -17,20 +17,13 @@ class GenreSerializerId(serializers.ModelSerializer):
         fields = ('id', )
 
 
-# class CommentSerializer(serializers.ModelSerializer):
-    
-#     class Meta:
-#         model = Comment
-#         fields = '__all__'
-#         # read_only_fields = ('movie',)
-
 class CommentSerializer(serializers.ModelSerializer):
-    # user = UserDetailSerializer(read_only=True)
+    username = serializers.CharField(source='user.username', read_only=True)
     class Meta : 
         model = Comment
-        # fields = ('id','user','content','created_at')
         fields = "__all__"
-        read_only_fields = ('review','like_users',)
+        read_only_fields = ('user','movie',)
+        extra_kwargs = {'user': { 'required':False }}
 
 
 
