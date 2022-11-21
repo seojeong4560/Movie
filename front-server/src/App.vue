@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav class="navbar">
-      <a class="navbar-brand" href="#">
-        <img src="https://i.ibb.co/r5krrdz/logo.png"  height=40px alt="logo">
+      <a class="navbar-brand">
+        <img src="https://i.ibb.co/r5krrdz/logo.png" height=40px alt="logo" @click="home">
       </a>
       <div v-if="isUserLogin">
         <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>
@@ -42,6 +42,9 @@ export default {
     },
     새창 () {
       localStorage.setItem('vuex', sessionStorage.getItem('vuex')) // vuex session to local
+    },
+    home(){
+      return this.$router.push({name: 'MovieView'})
     }
   },
   beforeCreate () {
