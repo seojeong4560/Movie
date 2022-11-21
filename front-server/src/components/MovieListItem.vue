@@ -5,21 +5,12 @@
       <div class="a">
         <img :src="movieImgURL" alt="" @click="detail">  
       </div>
-      <div class="info">
-        <br>
+      <div class="info2">
         <p id="movietitle">{{ movie.title }}</p>
-        <div class="star-rating space-x-4 mx-auto">
-          <input type="radio" id="5-stars" name="rating" value="5" v-model="ratings"/>
-          <label for="5-stars" class="star pr-4">★</label>
-          <input type="radio" id="4-stars" name="rating" value="4" v-model="ratings"/>
-          <label for="4-stars" class="star">★</label>
-          <input type="radio" id="3-stars" name="rating" value="3" v-model="ratings"/>
-          <label for="3-stars" class="star">★</label>
-          <input type="radio" id="2-stars" name="rating" value="2" v-model="ratings"/>
-          <label for="2-stars" class="star">★</label>
-          <input type="radio" id="1-star" name="rating" value="1" v-model="ratings" />
-          <label for="1-star" class="star">★</label>
-        </div>
+      </div>
+      <div class="info">
+        <br><br><br>
+        <star-rating :increment="0.01" :fixed-points="2" :star-size="40" id="starrating"></star-rating>
       </div>
     </div>
   </div>
@@ -27,6 +18,7 @@
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
 import {swiperSlide } from 'vue-awesome-swiper'
 
 
@@ -51,7 +43,8 @@ export default {
     }
   },
   components: {
-    swiperSlide
+    swiperSlide,
+    StarRating
   }
 }
 </script>
@@ -59,7 +52,7 @@ export default {
 <style scoped>
 img{
   /* max-width: 100%; */
-  transition: all 0.5s linear;
+  transition: all 0.4s linear;
   width: 250px;
   height: 320px;
   padding: 5px;
@@ -96,7 +89,7 @@ img{
 .box .info {
   color: #fff;
   position: absolute; left: 0; top: 45%;
-  background: rgba(0,0,0,0.5);
+  /* background: rgba(0,0,0,0.5); */
   width: 100%;
   height: 200px;
   /* padding: 15px; */
@@ -125,43 +118,76 @@ img{
   text-transform: uppercase;
 }
 
-#movietitle{
-  font-style: italic;
-  color: lightgrey;
-  font-weight: bolder;
-  
+.box .info2 {
+  /* color: black; */
+  /* font-weight: bolder; */
+  position: absolute; left: 0%; top: 85%;
+  /* background: rgba(15, 15, 15, 0.555); */
+  width: 100%;
+  height: 320px;
+  /* padding: 15px; */
+  box-sizing: border-box;
+  /* opacity: 0; */
+  /* transition: opacity 0.9s ease-in-out; */
+  transition: top 0.9s;
   
 }
 
-.star-rating {
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-  justify-content: space-around;
-  padding: 0 0.2em;
+.box:hover .info2 {
+  opacity: 1;
+  top: 170px;
+}
+
+.box .info2 p {
+  font-size: 23px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+#movietitle{
+  font-style: italic;
+  /* color: lightgrey; */
+  font-weight: 900;
+  /* font-family: 'Staatliches', cursive; */
+  font-size: 1.7em;
   text-align: center;
-  width: 5em;
+  /* color: BABAC1; */
+  margin: 0;
+  /* background-image: linear-gradient(90deg, red, orange, yellow, purple); */
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: -1px 0 lightgrey, 0 1px rgb(28, 27, 27), 1px 0 rgb(94, 85, 85);
 }
- 
-.star-rating input {
-  display: none;
+
+
+/* #movietitle2{
+  font-style: italic;
+  color: lightgrey;
+  font-weight: bolder;
+} */
+
+body {
+  font-family: 'Raleway', sans-serif;
 }
- 
-.star-rating label {
-  -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: 0.3px;
-  -webkit-text-stroke-color: #fff58c;
-  cursor: pointer;
+
+.custom-text {
+  font-weight: bold;
+  font-size: 1.9em;
+  border: 1px solid #cfcfcf;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  color: #999;
+  background: #fff;
+
 }
- 
-.star-rating :checked ~ label {
-  -webkit-text-fill-color: gold;
+
+#starrating{
+  padding-left: 39px;
+  padding-top: 5px;
 }
- 
-.star-rating label:hover,
-.star-rating label:hover ~ label {
-  -webkit-text-fill-color: gold
-}
+
+
 
 </style>

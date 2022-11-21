@@ -11,6 +11,8 @@
         </span>
       </p>
       <p id="overview">{{movie.overview}}</p>
+      <star-rating :increment="0.01" :fixed-points="2"></star-rating>
+      <br>
       <button id="btn1" type="button" class="btn btn-danger">Play</button>
       <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
       <button id="btn2" type="button" class="btn btn-light">+</button> 
@@ -25,8 +27,10 @@
 </template>
 
 <script>
+import StarRating from 'vue-star-rating'
 import axios from 'axios'
 import MovieList from '@/components/MovieList'
+
 
 const API_URL = 'http://127.0.0.1:8000'
 
@@ -41,6 +45,7 @@ export default {
   },
   components:{
     MovieList,
+    StarRating
   },
   created(){
     this.getMovieDetail()
@@ -67,6 +72,7 @@ export default {
       .catch(err => { console.log(err) })
     }
   },
+  
   
 }
 </script>
@@ -145,4 +151,21 @@ export default {
   margin-left: 15px;
   font-size: 28px;
 }
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.custom-text {
+  font-weight: bold;
+  font-size: 1.9em;
+  border: 1px solid #cfcfcf;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+  color: #999;
+  background: #fff;
+  
+}
+
 </style>

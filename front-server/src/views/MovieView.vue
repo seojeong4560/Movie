@@ -74,6 +74,7 @@ body {
   margin-left: 15px;
   font-size: 28px;
   margin-bottom: 17px;
+  text-shadow: -1px 0 rgb(238, 231, 231), 0 1px rgb(244, 237, 237);
 }
 
 #h2word2{
@@ -114,8 +115,8 @@ body {
   height: 320px;
   /* padding: 15px; */
   box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 0.9s ease-in-out;
+  /* opacity: 0; */
+  /* transition: opacity 0.9s ease-in-out; */
   
 }
 
