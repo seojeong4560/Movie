@@ -16,10 +16,17 @@
       <button id="btn2" type="button" class="btn btn-light">+</button> 
     </div>
     <br><br>
+
+    <CommentForm 
+      :movie-id = "movieId"
+      @update-list="getMovieDetail"
+    />
+    <CommentList :comments="commentSet"/>
+
     <div id="movieList">
       <hr id = "hr">
       <h2 id="h2word">관련 영화</h2>
-      <MovieList :movies="same_genres"/>
+      <MovieList :movies="sameGenres"/>
     </div>
   </div>
 </template>
@@ -27,6 +34,8 @@
 <script>
 import axios from 'axios'
 import MovieList from '@/components/MovieList'
+import CommentList from '@/components/CommentList'
+import CommentForm from '@/components/CommentForm'
 
 const API_URL = 'http://127.0.0.1:8000'
 
@@ -35,12 +44,15 @@ export default {
   data(){
     return {
       movie: Object,
-      same_genres: [],
-      movieId: this.$route.params.id
+      sameGenres: [],
+      movieId: this.$route.params.id,
+      commentSet: [],
     }
   },
   components:{
     MovieList,
+    CommentList,
+    CommentForm,
   },
   created(){
     this.getMovieDetail()
@@ -60,12 +72,13 @@ export default {
         url: `${API_URL}/api/movies/detail/${this.movieId}`
       })
       .then(res => {
-        // console.log(res)
         this.movie = res.data.movie
-        this.same_genres = res.data.same_genres
+        this.sameGenres = res.data.same_genres
+        this.commentSet = res.data.movie.comment_set
+        console.log(res)
       })
       .catch(err => { console.log(err) })
-    }
+    },
   },
   
 }

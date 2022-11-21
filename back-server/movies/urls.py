@@ -6,7 +6,7 @@ app_name = 'movies'
 
 urlpatterns = [
     path('', views.main),
-    path('detail/<int:movie_pk>', views.movie_detail),
+    path('detail/<int:movie_pk>/', views.movie_detail),
     path('comments/', views.comment_list),
     path('comments/<int:comment_pk>/', views.comment_detail),
     path('<int:movie_pk>/comments/', views.comment_create),
