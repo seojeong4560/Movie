@@ -15,13 +15,19 @@
     </div>
     <br><br>
     <h2 id="h2word2"></h2>
+    <h3 id="mdh3">I</h3>
     <h2 id="h2word">최신 영화</h2>
+    <br><br><br>
     <MovieList :movies="latest_movies"/>
     <br><hr><br>
+    <h3 id="mdh3">I</h3>
     <h2 id="h2word">평점 높은 영화</h2>
+    <br><br><br>
     <MovieList :movies="highscore_movies"/>
     <br><hr><br>
+    <h3 id="mdh3">I</h3>
     <h2 id="h2word">인기 영화</h2>
+    <br><br><br>
     <MovieList :movies="like_movies"/>
     <br><br>
   </div>
@@ -75,6 +81,14 @@ body {
   font-size: 28px;
   margin-bottom: 17px;
   text-shadow: -1px 0 rgb(238, 231, 231), 0 1px rgb(244, 237, 237);
+  float: left;
+
+}
+
+#mdh3{
+  float: left;
+  color: red;
+  font-weight: 750;
 }
 
 #h2word2{
