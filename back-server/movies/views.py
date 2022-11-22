@@ -15,16 +15,37 @@ from .models import Movie, Genre, Comment, Mbti
 from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer
 
 from django.http.response import JsonResponse
+from datetime import datetime
 
 
 @api_view(['GET'])
 def main(request) :
     if request.method == 'GET':
+        now = datetime.now()
+        temp = Movie.objects.order_by('-release_date').prefetch_related('genres')[:50]
+
+        i = 0
+        while True:
+            if str(now)[:10] < str(temp[i].release_date):
+                i += 1
+            else:
+                break
+        
+        # 상영 예정작
+        upcomming_movies = temp[:i]
+        upcomming_serializer = MovieSerializer(data=upcomming_movies, many=True)
+        upcomming_serializer.is_valid()
+
+
         # 가장 최근에 개봉한 영화
-        latest_movies = Movie.objects.order_by('-release_date').prefetch_related('genres')[:20]
+        latest_movies = temp[i:i+20]
         latest_serializer = MovieSerializer(data=latest_movies, many=True)
-        # print(latest_movies[0].genres.all())
         latest_serializer.is_valid()
+
+        # print(latest_movies[0].genres.all())
+        # print(temp[0].release_date)
+        # print(str(now)[:10]>"2023-10-30")
+        
 
         # 영화 평점 순
         highscore_movies = Movie.objects.order_by('-vote_average').prefetch_related('genres')[:20]
@@ -37,6 +58,7 @@ def main(request) :
         like_serializer.is_valid()
         
         context={
+            'upcomming_movies' : upcomming_serializer.data,
             'latest_movies' : latest_serializer.data,
             'highscore_movies' : highscore_serializer.data,
             'like_movies' : like_serializer.data,
@@ -109,3 +131,25 @@ def mbti_detail(request, mbti_pk):
         mbti = Mbti.objects.get(pk=mbti_pk)
         serializer = MbtiSerializer(mbti)
         return Response(serializer.data)
+
+
+@api_view(['GET', 'POST'])
+def recommend(request):
+    if request.method == 'POST':
+        selected = request.POST.getlist('selected')
+        selected_genre = Movie.objects.filter(genres__in = selected)
+        selected_genre = list(selected_genre)
+        selected_genre.sort(key=lambda x: x.popularity, reverse=True)
+        context = {
+            'selected_genre' : selected_genre[:20],
+        }
+        return Response(context)
+
+    else:
+        genres = Genre.objects.all()        
+        genres_serializer = GenreSerializer(data=genres, many=True)
+        genres_serializer.is_valid()
+        context = {
+            'genres': genres_serializer.data,
+        }
+        return Response(context)

@@ -10,9 +10,12 @@ const API_URL = 'http://127.0.0.1:8000'
 
 export default new Vuex.Store({
   state: {
+    upcomming_movies : [],
     latest_movies : [],
     highscore_movies : [],
     like_movies : [],
+    genres: [],
+    checked_genres: [],
     token: null,
     username: null,
     mbti: null,
@@ -29,10 +32,14 @@ export default new Vuex.Store({
   },
   mutations: {
     GET_MOVIE_LIST(state, movieList){
+      state.upcomming_movies = movieList.upcomming_movies
       state.latest_movies = movieList.latest_movies
       state.highscore_movies = movieList.highscore_movies
       state.like_movies = movieList.like_movies
       // console.log(state.latest_movies)
+    },
+    GET_GENRE_LIST(state, genres){
+      state.genres = genres.genres
     },
     SAVE_TOKEN(state, name_token){
       state.username = name_token.username
@@ -59,6 +66,18 @@ export default new Vuex.Store({
       .then((res) => {
         // console.log(res.data.highscore_movies)
         context.commit('GET_MOVIE_LIST', res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    },
+    getGenreList(context){
+      axios({
+        method: 'get',
+        url: `${API_URL}/api/movies/recommend/`
+      })
+      .then((res) => {
+        context.commit('GET_GENRE_LIST', res.data)
       })
       .catch(err => {
         console.log(err)

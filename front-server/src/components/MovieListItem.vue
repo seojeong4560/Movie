@@ -10,7 +10,7 @@
       </div>
       <div class="info">
         <br><br><br>
-        <star-rating :increment="0.01" :fixed-points="2" :star-size="40" id="starrating"></star-rating>
+        <star-rating :rating="movie.vote_average/2" :read-only="true" :increment="0.01"></star-rating>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
 
 <script>
 import StarRating from 'vue-star-rating'
-import {swiperSlide } from 'vue-awesome-swiper'
+import { swiperSlide } from 'vue-awesome-swiper'
 
 
 export default {

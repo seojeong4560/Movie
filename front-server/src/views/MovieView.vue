@@ -9,17 +9,18 @@
           <br>
           <h1 id="h1tag">오늘은 이런 영화 어때요?</h1>
           <br><br><br><br>
-          <button id="mainbtn" type="button" class="btn btn-danger">Let's go Choose</button>
+          <button id="mainbtn" type="button" class="btn btn-danger" @click="checkList">Let's go Choose</button>
         </div>
       </div>
     </div>
     <br><br>
     <h2 id="h2word2"></h2>
     <h3 id="mdh3">I</h3>
-    <h2 id="h2word">최신 영화</h2>
+    <h2 id="h2word">최신 개봉 영화</h2>
     <br><br><br>
     <MovieList :movies="latest_movies"/>
     <br><hr><br>
+    
     <h3 id="mdh3">I</h3>
     <h2 id="h2word">평점 높은 영화</h2>
     <br><br><br>
@@ -29,6 +30,11 @@
     <h2 id="h2word">인기 영화</h2>
     <br><br><br>
     <MovieList :movies="like_movies"/>
+    <br><hr><br>
+    <h3 id="mdh3">I</h3>
+    <h2 id="h2word">개봉 예정작</h2>
+    <br><br><br>
+    <MovieList :movies="upcomming_movies"/>
     <br><br>
   </div>
 </template>
@@ -45,6 +51,9 @@ export default {
     this.getMovieList()
   },
   computed: {
+    upcomming_movies(){
+      return this.$store.state.upcomming_movies
+    },
     latest_movies(){
       return this.$store.state.latest_movies
     },
@@ -59,6 +68,9 @@ export default {
     getMovieList(){
       this.$store.dispatch('getMovieList')
     },
+    checkList(){
+      return this.$router.push({name: 'CheckListView'})
+    }
   }
 
 }

@@ -7,6 +7,7 @@ import MovieView from '@/views/MovieView'
 import DetailView from '@/views/DetailView'
 import MbtiView from '@/views/MbtiView'
 import MbtiResultView from '@/views/MbtiResultView'
+import CheckListView from '@/views/CheckListView'
 
 
 Vue.use(VueRouter)
@@ -51,6 +52,11 @@ const routes = [
     path: '/mbtiresult',
     name: 'MbtiResultView',
     component: MbtiResultView
+  },
+  {
+    path: '/checklist',
+    name: 'CheckListView',
+    component: CheckListView
   },
 
 ]

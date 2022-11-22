@@ -15,7 +15,7 @@
 import MovieListItem from '@/components/MovieListItem'
 
 import 'swiper/dist/css/swiper.css'
-import { swiper} from 'vue-awesome-swiper'
+import { swiper } from 'vue-awesome-swiper'
 
 export default {
   name: 'MovieList',
