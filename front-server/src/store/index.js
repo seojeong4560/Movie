@@ -10,12 +10,12 @@ const API_URL = 'http://127.0.0.1:8000'
 
 export default new Vuex.Store({
   state: {
-    // movieLIst: [],
     latest_movies : [],
     highscore_movies : [],
     like_movies : [],
     token: null,
     username: null,
+    mbti: null,
   },
   plugins: [
     createPersistedState({
@@ -42,8 +42,13 @@ export default new Vuex.Store({
     LOGOUT(state){
       state.token = !state.token
       state.username = null
-      router.push({name: 'LogInView'})
+      router.push({name: 'MovieView'})
     },
+    GET_MBTI(state, mbti){
+      state.mbti = mbti
+      // console.log(state.mbti)
+      router.push({name: 'MbtiResultView'})
+    }
   },
   actions: {
     getMovieList(context){
@@ -101,7 +106,7 @@ export default new Vuex.Store({
         }
         context.commit('SAVE_TOKEN', name_token)
       })
-    }
+    },
   },
   modules: {
   }

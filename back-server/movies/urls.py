@@ -11,6 +11,6 @@ urlpatterns = [
     path('comments/<int:comment_pk>/', views.comment_detail),
     path('<int:movie_pk>/comments/', views.comment_create),
     # path('mypageMovie/<str:username>', views.mypageMovie)
-
+    path('mbti/<int:mbti_pk>/', views.mbti_detail),
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
 ]

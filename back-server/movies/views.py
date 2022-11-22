@@ -11,8 +11,8 @@ from rest_framework import status
 
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
-from .models import Movie, Genre, Comment
-from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer
+from .models import Movie, Genre, Comment, Mbti
+from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer
 
 from django.http.response import JsonResponse
 
@@ -77,7 +77,6 @@ def comment_list(request):
 @api_view(['GET', 'DELETE', 'PUT'])
 def comment_detail(request, comment_pk):
     comment = Comment.objects.get(pk=comment_pk)
-    # comment = get_object_or_404(Comment, pk=comment_pk)
 
     if request.method == 'GET':
         serializer = CommentSerializer(comment)
@@ -102,3 +101,11 @@ def comment_create(request, movie_pk):
     if serializer.is_valid(raise_exception=True):
         serializer.save(movie=movie, user = request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+@api_view(['GET'])
+def mbti_detail(request, mbti_pk):
+    if request.method == 'GET':
+        mbti = Mbti.objects.get(pk=mbti_pk)
+        serializer = MbtiSerializer(mbti)
+        return Response(serializer.data)

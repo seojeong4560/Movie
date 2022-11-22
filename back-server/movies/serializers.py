@@ -3,6 +3,7 @@ from rest_framework import serializers
 from .models import Genre
 from .models import Movie
 from .models import Comment
+from .models import Mbti
 
 class GenreSerializer(serializers.ModelSerializer):
 
@@ -40,4 +41,9 @@ class MovieDetailSerializer(serializers.ModelSerializer):
 
     class Meta : 
         model = Movie
+        fields = "__all__"
+
+class MbtiSerializer(serializers.ModelSerializer):
+    class Meta : 
+        model = Mbti
         fields = "__all__"
