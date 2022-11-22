@@ -17,14 +17,15 @@
       <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
       <button id="btn2" type="button" class="btn btn-light">+</button> 
     </div>
-    <br><br>
-
-    <CommentForm 
-      :movie-id = "movieId"
-      @update-list="getMovieDetail"
-    />
-    <CommentList :comments="commentSet"/>
-
+    <br><br>>
+    <div id="commentForm">
+      <CommentForm 
+        :movie-id = "movieId"
+        @update-list="getMovieDetail"
+      />
+      <CommentList :comments="commentSet"/>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
     <div id="movieList">
       <hr id = "hr">
       <h2 id="h2word">관련 영화</h2>
@@ -90,16 +91,17 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #movieImage{
   width: 270px;
   float: left;
   margin-left: 30px;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 #MVDetail{
-  padding-top: 100px;
+  padding-top: 50px;
   text-align: left;
   margin-right: 25px;
   
@@ -133,18 +135,21 @@ export default {
 #btn1{
   width: 100px;
   height: 45px;
+  margin-bottom: 80px;
 }
 
 #btn2{
   margin-left: 5px;
   width: 50px;
   height: 45px;
+  margin-bottom: 80px;
 }
 
 #btn3{
   margin-left: 5px;
   width: 60px;
   height: 45px;
+  margin-bottom: 80px;
 }
 
 #img1{
@@ -178,6 +183,23 @@ body {
   border-radius: 5px;
   color: #999;
   background: #fff;
+  
+}
+
+#commentForm{
+  float: left;
+  padding-left: 30px;
+  padding-top: 20px;
+  
+}
+
+#commentForm{
+  background-color: rgb(31, 28, 28);
+  width: 1250px;
+  border-radius: 20px;
+  height: 280px;
+  margin-left: 315px;
+  
   
 }
 

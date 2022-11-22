@@ -1,11 +1,13 @@
 <template>
-  <div>
-    <h4>댓글 작성</h4>
     <form @submit.prevent="createComment">
-      <input type="text" v-model="content">
-      <input type="submit" id="submit">
+      <br>
+      <div class="col-auto">
+      <input type="text" v-model="content" class="form-control" id="inputid" placeholder="감상평을 등록해주세요.">
+      </div>
+      <div class="col-auto">
+      <input type="submit" id="submit" class="btn btn-danger">
+      </div>
     </form>
-  </div>
 </template>
 
 <script>
@@ -49,6 +51,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#inputid{
+  float: left;
+  margin-top: -20px;
+  width: 1100px;
+  height: 50px;
+  
+}
+
+#submit{
+  float: left;
+  /* position: absolute;
+  top: 610px;
+  left : 470px; */
+  height: 46px;
+  width: 80px;
+  background-color: red;
+  margin-top: -20px;
+  height: 50px;
+  
+}
+
+
 
 </style>
