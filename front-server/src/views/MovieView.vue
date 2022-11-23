@@ -9,12 +9,13 @@
           <br>
           <h1 id="h1tag">오늘은 이런 영화 어때요?</h1>
           <br><br><br><br>
+          <div class="a">
           <button id="mainbtn" type="button" class="btn btn-danger" @click="checkList">Let's go Choose</button>
+          </div>
         </div>
       </div>
     </div>
     <br><br>
-    <h2 id="h2word2"></h2>
     <h3 id="mdh3">I</h3>
     <h2 id="h2word">최신 개봉 영화</h2>
     <br><br><br>
@@ -186,6 +187,14 @@ body {
   font-size: 20px;
   font-weight: bold;
 
+}
+
+.a button{
+  transition: all 0.5s linear;
+}
+
+.a:hover button {
+  transform: scale(1.1);
 }
 
 

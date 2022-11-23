@@ -46,14 +46,14 @@ export default {
 </script>
 
 <style scoped>
-/* #cmitem{
-  background-color: rgba(117, 115, 115, 0.5);
-  float: left;
-  margin-top: -55px;
-  border-radius: 20px;
-  width: 775px;
-  height: 120px;
-} */
+#cmitem{
+  /* background-color: rgba(117, 115, 115, 0.5); */
+  /* float: left; */
+  /* margin-top: -55px; */
+  /* border-radius: 20px; */
+  /* width: 775px; */
+  /* height: 120px; */
+}
 
 #cmfont1{
   color: red;

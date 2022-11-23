@@ -65,6 +65,7 @@ img{
 
 .a:hover img{
   transform: scale(1.1, 1.1);
+  filter: brightness(20%);
 }
 
 /* .box-wrap {
@@ -83,8 +84,10 @@ img{
 
 .box img {
   width: 100%;
-  padding: 5px;
+  padding: 5px; 
 }
+
+
 
 .box .info {
   color: #fff;

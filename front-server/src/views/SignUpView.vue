@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="back"></div>
+    <div class="back"><img id="backimg" src="https://i.pinimg.com/originals/e9/54/b2/e954b2d4f79c1da0909f38f6050a30d7.jpg" alt=""></div>
     <br><br>
     <h1 id="SignUpPageMessage">Unlimited movies, TV shows, and more.</h1>
     <h2 id="SignUpPageMessage2">Watch anywhere. Cancel anytime.</h2>
@@ -49,13 +49,20 @@ export default {
 
 <style scoped>
 div.back {
-  width: 100vw;
-  height: 90vh;
+  /* width: 100vw;
+  height: 90vh; */
   position: absolute;
-  background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg"); 
+  /* background-image: url("https://i.pinimg.com/originals/e9/54/b2/e954b2d4f79c1da0909f38f6050a30d7.jpg");  */
   background-repeat: no-repeat;
   z-index: -1;
-  filter: brightness(55%)
+  filter: brightness(55%);
+  
+  
+}
+
+#backimg{
+  width: 1900px;
+  height: 800px;
 }
 
 #SignUpPageMessage{
