@@ -149,6 +149,8 @@ body {
 .box:hover .info {
   opacity: 1;
 }
+
+
 /* .box .info h3 {
   font-size: 24px;
   padding-bottom: 0.4em;

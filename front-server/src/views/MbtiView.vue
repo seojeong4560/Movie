@@ -1,8 +1,19 @@
 <template>
-  <div>
-    <h2>{{ title }}</h2>
-    <p @click="findType(1)">{{ choice1 }}</p>
-    <p @click="findType(-1)">{{ choice2 }}</p>
+ <div>
+  <div id="mbtibox">
+    <br><br>
+    <h1 id="qid">Q.</h1>
+    <br><br><br>
+    <h2 id="titleid">{{ title }}</h2>
+    <br><br><br><br><br><br><br><br><br>
+    <div class="a">
+    <button  @click="findType(1)" class="btn btn-light" id="choicebtn">{{ choice1 }}</button >
+    </div>
+    <div class="a">
+    <button  @click="findType(-1)" class="btn btn-light" id="choicebtn">{{ choice2 }}</button >
+    </div>
+  </div>
+  <img id="img1" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt="">
   </div>
 </template>
 
@@ -97,6 +108,70 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#qid{
+  color: #ECE3E3;
+  font-size: 75px;
+  float: left;
+  margin-left: 30px;
+  font-weight: bold;
+  
+}
+
+#titleid{
+  color: #ECE3E3;
+  float: left;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: bold;
+  font-size: 37px;
+  /* -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: -1px 0 lightgrey, 0 1px rgb(28, 27, 27), 1px 0 rgb(94, 85, 85); */
+}
+
+#mbtibox{
+  background-color: rgb(16, 15, 15);
+  width: 500px;
+  height: 660px;
+  margin-left: 700px;
+  margin-top: 100px;
+  border-radius: 30px;
+  border: 5px solid grey;
+  
+}
+
+#choicebtn{
+  margin: 5px;
+  width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  /* border: 0.5px solid; */
+  font-size: 20px;
+  color: black;
+  font-weight: bold;
+
+}
+
+.a button {
+  transition: all 0.2s linear;
+}
+.a:hover button {
+  transform: scale(1.05);
+  background-color: red;
+  border: 5px solid red;
+  color: white;
+}
+
+#img1{
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+  width: 700px;
+}
+
+
+
+/* 수정함 */
 
 </style>

@@ -14,7 +14,7 @@
         <span id="uname">{{userName}}</span>
         <span id="uname2">님</span>
         <router-link :to="{ name: 'MyPageView' }" id="mPage">MyPage</router-link>
-        <router-link :to="{ name: 'MbtiView' }" id="mbti">MBTI</router-link>
+        <router-link :to="{ name: 'MbtiView' }" id="mbti">MyMBTI</router-link>
         <span @click="logout" id="lout">Logout</span>
       </div>
     </nav>
@@ -127,6 +127,13 @@ nav a.router-link-exact-active {
   color: azure;
 }
 
+#mbti{
+  margin-left: 27px;
+  font-size: 23px;
+  font-weight: bold;
+  color: azure;
+}
+
 #lout{
   margin-left: 25px;
   font-size: 23px;
@@ -134,5 +141,8 @@ nav a.router-link-exact-active {
   color: azure;
   margin-right: 15px;
 }
+
+
+/* 1차 바꿈 */
 
 </style>

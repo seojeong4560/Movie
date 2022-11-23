@@ -4,11 +4,12 @@
     <p id="cmfont11">님</p>
     <p id="cmfont2">{{ comment.content }}</p>
     <!-- <p id="cmfont3">수정</p> -->
-    <br><br><br><br>
+    <br><br><br><br>b
     <p id="cmfont3">{{ comment.created_at }}</p>
     <button @click="deleteComment" id="cmbtn" class="btn btn-light"><p id="delword">삭제</p></button>
-    <br><hr>
     <br>
+    <hr id="hr">
+  
   </div>
 </template>
 
@@ -59,7 +60,7 @@ export default {
   -webkit-text-stroke: 0.5px black;
   font-weight: bold;
   float: left;
-  margin-top: 20px;
+  margin-top: 10px;
   /* margin-left: 10px; */
   font-size: 30px;
 }
@@ -67,7 +68,7 @@ export default {
 #cmfont11{
   color: white;
   float: left;
-  margin-top: 35px;
+  margin-top: 25px;
   /* margin-left: 10px; */
   font-size: 18px;
   font-weight: bold;
@@ -76,7 +77,7 @@ export default {
 #cmfont2{
   color: white;
   float: left;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 40px;
   font-size: 25px;
 }
@@ -105,8 +106,10 @@ export default {
   font-size: 10px
 }
 
+#hr{
+  color: grey;
+}
 
-
-
+/* 수정 */
 
 </style>

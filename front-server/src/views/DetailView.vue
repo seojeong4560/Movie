@@ -1,8 +1,9 @@
 <template>
   <div>
     <br>
-      <img :src="movieImgURL" alt="" id="movieImage">
       <div id="MVDetail">
+      <div id="mvbox">
+      <img :src="movieImgURL" alt="" id="movieImage">
       <h3 id="movieTitle">{{movie.title}}</h3>
       <p id="genre">
         Genre: 
@@ -11,21 +12,21 @@
         </span>
       </p>
       <p id="overview">{{movie.overview}}</p>
-      <star-rating :increment="0.01" :fixed-points="2"></star-rating>
+      <star-rating :increment="0.01" :fixed-points="2" id="star"></star-rating>
       <br>
-      <button id="btn1" type="button" class="btn btn-danger">Play</button>
-      <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
-      <button id="btn2" type="button" class="btn btn-light">+</button> 
+        <button id="btn1" type="button" class="btn btn-danger">Play</button>
+        <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
+        <button id="btn2" type="button" class="btn btn-light">+</button> 
     </div>
-    <br><br>>
-    <div id="commentForm">
-      <CommentForm 
-        :movie-id = "movieId"
-        @update-list="getMovieDetail"
-      />
-      <CommentList :comments="commentSet"/>
+        <div id="commentForm">
+          <CommentForm 
+            :movie-id = "movieId"
+            @update-list="getMovieDetail"
+          />
+          <CommentList :comments="commentSet"/>
+        </div>
     </div>
-    <br><br><br><br><br><br><br><br><br>
+    
     <div id="movieList">
       <hr id = "hr">
       <h2 id="h2word">관련 영화</h2>
@@ -103,7 +104,7 @@ export default {
 #MVDetail{
   padding-top: 50px;
   text-align: left;
-  margin-right: 25px;
+  /* margin-right: 25px; */
   
 }
 
@@ -187,20 +188,35 @@ body {
 }
 
 #commentForm{
-  float: left;
+  /* float: left; */
   padding-left: 30px;
   padding-top: 20px;
   
 }
 
 #commentForm{
-  background-color: rgb(31, 28, 28);
-  width: 1250px;
+  background-color: rgb(16, 15, 15);
+  width: 650px;
   border-radius: 20px;
-  height: 280px;
-  margin-left: 315px;
+  height: 380px;
+  margin-left: 15px;
+  /* float: right; */
+  margin-right: 10px;
+  position: absolute;
+  right: 10px;
+  top: 190px
   
   
 }
+
+#mvbox{
+  width: 1200px;
+}
+
+#star{
+  width: 100px;
+}
+
+/* 수정 */
 
 </style>

@@ -55,7 +55,7 @@ export default {
 #inputid{
   float: left;
   margin-top: -20px;
-  width: 1100px;
+  width: 500px;
   height: 50px;
   
 }
@@ -73,6 +73,6 @@ export default {
   
 }
 
-
+/* 수정 */
 
 </style>

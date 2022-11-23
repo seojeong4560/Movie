@@ -8,7 +8,6 @@
       :key="comment.id"
       :comment="comment"
     />
-    
     </div>
     </div>
 </template>
@@ -30,10 +29,11 @@ export default {
 .container {
   overflow: auto;
   float: left;
-  margin-top: -35px;
+  margin-top: -45px;
   border-radius: 20px;
-  width: 1175px;
-  height: 120px;
+  width: 580px;
+  height: 260px;
+  background-color: #323232;
 }
 
 .container::-webkit-scrollbar {
@@ -52,4 +52,6 @@ export default {
     border-radius: 10px;
     box-shadow: inset 0px 0px 5px grey;
   }
+
+/* 수정 */
 </style>

@@ -1,7 +1,8 @@
 <template>
   <div>
-    <h1>당신의 MBTI는?</h1>
-    <h2>{{ mbti }}</h2>
+    <br><br><br>
+    <h1 id="mbtititle">당신의 MBTI는?</h1>
+    <h2 id="mbti">{{ mbti }}</h2>
     <p>{{context}}</p>
   </div>
 </template>
@@ -32,6 +33,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#mbtititle{
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  
+}
+
+#mbti{
+  color: yellow;
+  font-size: 50px;
+}
+
+/* 수정 */
 
 </style>
