@@ -7,22 +7,36 @@
       <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
       <label :for="genre.id">{{ genre.name }}</label>      
     </span>
-    <p>checked</p>
-    <p>{{checked}}</p>
+    <!-- <p>checked</p>
+    <p>{{checked}}</p> -->
+    <button @click="getRecommend">push</button>
+    <br><hr><br>
+    <h2>추천 영화</h2>
+    <br><br><br>
+    <MovieList :movies="recommended"/>
+    <br><br>
+
+
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+import MovieList from '@/components/MovieList'
+
+const API_URL = 'http://127.0.0.1:8000'
 export default {
   name: 'CheckListView',
+  components:{
+    MovieList,
+  },
   data(){
     return{
       checked: [],
+      recommended: [],
     }
   },
-  components:{
-    // CheckItem,
-  },
+
   computed: {
     genres(){
       return this.$store.state.genres
@@ -34,11 +48,25 @@ export default {
   methods: {
     getGenreList(){
       this.$store.dispatch('getGenreList')
+    },
+    getRecommend(){
+      axios({
+        method: 'post',
+        url: `${API_URL}/api/movies/recommend/`,
+        data:{
+          genres: this.checked
+        }
+      })
+      .then(res =>{
+        // console.log(this.checked)
+        // console.log(res)
+        this.recommended = res.data.selected_genre
+      })
+      .catch(err => { console.log(err) })
+      }
     }
   }
 
-
-}
 </script>
 
 <style scoped>

@@ -38,12 +38,6 @@ const routes = [
   },
 
   {
-    path: '/:id',
-    name: 'DetailView',
-    component: DetailView
-  },
-
-  {
     path: '/mbti',
     name: 'MbtiView',
     component: MbtiView
@@ -57,6 +51,13 @@ const routes = [
     path: '/checklist',
     name: 'CheckListView',
     component: CheckListView
+  },
+
+  // id가 다른 router 앞으로 가게 되면 먼저 인식이 되어 버린다.
+  {
+    path: '/:id',
+    name: 'DetailView',
+    component: DetailView
   },
 
 ]

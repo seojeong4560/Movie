@@ -16,6 +16,7 @@ from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer
 
 from django.http.response import JsonResponse
 from datetime import datetime
+import ast
 
 
 @api_view(['GET'])
@@ -75,7 +76,6 @@ def movie_detail(request, movie_pk) :
         # 영화 genre의 id list
         genres = movie.genres.all().values_list('id', flat=True)
         movies_same_genre = Movie.objects.filter(genres__id__in=genres).prefetch_related('genres').distinct().order_by('-vote_count')[:20]
-
         same_genre_serializer = MovieSerializer(data = movies_same_genre, many=True)
         same_genre_serializer.is_valid()
 
@@ -115,14 +115,6 @@ def comment_detail(request, comment_pk):
             return Response(serializer.data)
 
 
-@api_view(['POST'])
-def comment_create(request, movie_pk):
-    movie = Movie.objects.get(pk=movie_pk)
-    serializer = CommentSerializer(data=request.data)
-
-    if serializer.is_valid(raise_exception=True):
-        serializer.save(movie=movie, user = request.user)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET'])
@@ -141,16 +133,25 @@ def mbti_recommend(request, type):
         serializer = DetailSerializer(recommend)
         return Response(serializer.data)
 
+@api_view(['POST'])
+def comment_create(request, movie_pk):
+    movie = Movie.objects.get(pk=movie_pk)
+    serializer = CommentSerializer(data=request.data)
+
+    if serializer.is_valid(raise_exception=True):
+        serializer.save(movie=movie, user = request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET', 'POST'])
 def recommend(request):
     if request.method == 'POST':
-        selected = request.POST.getlist('selected')
-        selected_genre = Movie.objects.filter(genres__in = selected)
-        selected_genre = list(selected_genre)
-        selected_genre.sort(key=lambda x: x.popularity, reverse=True)
+        selected = request.data.get("genres")
+        selected_genre = Movie.objects.filter(genres__id__in=selected).prefetch_related('genres').distinct().order_by('-vote_count')[:20]
+        recommend_serializer = MovieSerializer(data=selected_genre, many=True)
+        recommend_serializer.is_valid()
+
         context = {
-            'selected_genre' : selected_genre[:20],
+            'selected_genre' : recommend_serializer.data,
         }
         return Response(context)
 

@@ -37,6 +37,7 @@ export default {
     FT: 0,
     JP: 0,
     result: "",
+    genres: []
   }
  },
  created(){
