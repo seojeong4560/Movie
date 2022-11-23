@@ -1,22 +1,23 @@
 <template>
   <div>
-    <span
+    <br><br>
+    <div id="checkboxlist">
+    <span 
       v-for="genre in genres"
       :key="genre.id"
     >
       <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
-      <label :for="genre.id">{{ genre.name }}</label>      
+      <label :for="genre.id" id="genrename">{{ genre.name }}</label>      
     </span>
+    <button @click="getRecommend">push</button>
     <!-- <p>checked</p>
     <p>{{checked}}</p> -->
-    <button @click="getRecommend">push</button>
+    </div>
     <br><hr><br>
     <h2>추천 영화</h2>
     <br><br><br>
     <MovieList :movies="recommended"/>
     <br><br>
-
-
   </div>
 </template>
 
@@ -91,29 +92,57 @@ export default {
   margin-left: 250px;
 }
 
-.container::-webkit-scrollbar {
-    width: 10px;
-  }
-
-.container::-webkit-scrollbar-thumb {
-    background-color: red;
-    border-radius: 10px;
-    
-  }
 
 
-.container::-webkit-scrollbar-track {
-    background-color: black;
-    border-radius: 10px;
-    box-shadow: inset 0px 0px px grey;
-  }
+#checkboxlist{
+  background-color: rgb(38, 35, 35);
+  width: 800px;
+  /* margin-left: 200px; */
+  color: white;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
 
+input{
+  margin-left: 20px;
+  margin-top: 20px;
+}
 
-img{
-  float: right;
-  padding-right: 50px;
-  margin-top: 400px;
-  width: 600px;
+#genrename{
+  font-size: 25px;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 16px;
+  outline: 0;
+  width: 25px;
+  height: 25px;
+}
+input[type="checkbox"]::after {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: '';
+  display: none;
+  height: 40%;
+  left: 40%;
+  position: relative;
+  top: 20%;
+  transform: rotate(45deg);
+  width: 15%;
+}
+input[type="checkbox"]:checked {
+  background: #505bf0;
+}
+input[type="checkbox"]:checked::after {
+  display: block;
 }
 
 /* 수정 */
