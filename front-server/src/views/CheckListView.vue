@@ -1,32 +1,27 @@
 <template>
   <div>
-    <br><br><br>
-    <div id="genrebox">
-    <div class="container">
-    <GenreItem
+    <span
       v-for="genre in genres"
       :key="genre.id"
-      :genre="genre"
-    />
-    </div>
-    </div>
-    <br>
-    <!-- <span>체크 한 값 : {{ checkedNames }}</span> -->
+    >
+      <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
+      <label :for="genre.id">{{ genre.name }}</label>      
+    </span>
+    <p>checked</p>
+    <p>{{checked}}</p>
   </div>
 </template>
 
 <script>
-import GenreItem from '@/components/GenreItem'
-
 export default {
   name: 'CheckListView',
-  // data(){
-  //   return{
-  //     checkedNames: [],
-  //   }
-  // },
+  data(){
+    return{
+      checked: [],
+    }
+  },
   components:{
-    GenreItem,
+    // CheckItem,
   },
   computed: {
     genres(){

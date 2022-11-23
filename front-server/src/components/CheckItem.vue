@@ -1,23 +1,37 @@
 <template>
   <div>
-    <input type="checkbox" :id="genre.id" :value="genre.id" v-model="checked"  >
+    <!-- <input type="checkbox" :id="genre.id" :value="genre.id" v-model="checked"  >
     <label for="a" >{{genre.name}}</label>
-    <br><br>
+    <br><br> -->
+    <!-- <label for="chk">
+      <input id="chk" type="checkbox" :value="cehcked" @input="$emit('input', !checked)">
+      {{label}}
+    </label> -->
+    <!-- <input type="checkbox" :id="genre.id" :value="genre.id" @click="toggle">
+    <label :for="genre.id">{{ genre.name }}</label> -->
   </div>
 </template>
 
 <script>
 export default {
-  name: 'GenreItem',
-  data(){
-    return{
-      checked: null,
-    }
-  },
+  name: 'CheckItem',
   props:{
     genre: Object,
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    label: String
+  },
+  methods: {
+    // toggle(){
+    //   this.$emit('input', !this.value)
+    // }
+  },
+  model: {
+    prop: 'checked',
+    event: 'input'
   }
-
 }
 </script>
 

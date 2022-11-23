@@ -4,6 +4,7 @@ from .models import Genre
 from .models import Movie
 from .models import Comment
 from .models import Mbti
+from .models import Detail
 
 class GenreSerializer(serializers.ModelSerializer):
 
@@ -45,4 +46,9 @@ class MovieDetailSerializer(serializers.ModelSerializer):
 class MbtiSerializer(serializers.ModelSerializer):
     class Meta : 
         model = Mbti
+        fields = "__all__"
+
+class DetailSerializer(serializers.ModelSerializer):
+    class Meta : 
+        model = Detail
         fields = "__all__"

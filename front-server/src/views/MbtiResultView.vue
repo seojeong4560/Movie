@@ -3,11 +3,18 @@
     <br><br><br>
     <h1 id="mbtititle">당신의 MBTI는?</h1>
     <h2 id="mbti">{{ mbti }}</h2>
-    <p>{{context}}</p>
+    <p>{{title}}</p>
+    <p>{{sub_title}}</p>
+    <p>{{char}}</p>
+    <p>{{genres}}</p>
+    <img :src="img" alt="">
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+const API_URL = 'http://127.0.0.1:8000'
+
 export default {
   name: 'MbtiResultView',
   computed:{
@@ -15,20 +22,34 @@ export default {
       return this.$store.state.mbti
     }
   },
+  created(){
+    this.getMbtiDetail()
+  },
   data(){
     return {
-      context: null,
+      title: null,
+      sub_title: null,
+      char: null,
+      genres: null,
+      img: null,
     }
   },
   methods:{
-    mbti_detail(){
-      if(this.mbti == "ISTJ"){
-        this.context = "당신의 영화 MBTI는 진지한 모범생형 캐릭터인 ISTJ입니다. 한 번 시작한 일은 끝까지 해내는 유형으로서 주인공으로도 사용되고 조력자 역할인 경우가 많습니다."
-      }
-      else{
-        this.context = "else"
-      }
-    }
+    getMbtiDetail(){
+      axios({
+        method: 'get',
+        url: `${API_URL}/api/movies/mbti/detail/${this.mbti}`
+      })
+      .then(res => {
+        this.title = res.data.title
+        this.sub_title = res.data.sub_title
+        this.char = res.data.char
+        this.genres = res.data.genres
+        this.img = res.data.img
+        // console.log(res)
+      })
+      .catch(err => { console.log(err) })
+    },    
   }
 }
 </script>

@@ -35,10 +35,17 @@ class Comment(models.Model):
         return self.user.username
 
 class Mbti(models.Model):
-    id = models.IntegerField(primary_key=True)
     title = models.TextField()
     type = models.TextField()
     choice1 = models.TextField()
     choice2 = models.TextField()
     picture1 = models.TextField()
     picture2 = models.TextField()
+
+class Detail(models.Model):
+    type = models.TextField(unique=True)
+    title = models.TextField()
+    sub_title = models.TextField()
+    char = models.TextField()
+    genres = models.TextField()
+    img = models.TextField()

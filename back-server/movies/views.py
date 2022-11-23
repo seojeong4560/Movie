@@ -11,8 +11,8 @@ from rest_framework import status
 
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
-from .models import Movie, Genre, Comment, Mbti
-from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer
+from .models import Movie, Genre, Comment, Mbti, Detail
+from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer, DetailSerializer
 
 from django.http.response import JsonResponse
 from datetime import datetime
@@ -130,6 +130,15 @@ def mbti_detail(request, mbti_pk):
     if request.method == 'GET':
         mbti = Mbti.objects.get(pk=mbti_pk)
         serializer = MbtiSerializer(mbti)
+        return Response(serializer.data)
+
+@api_view(['GET'])
+def mbti_recommend(request, type):
+    if request.method == 'GET':
+        recommend = Detail.objects.get(type=type)
+        # recommend = Mbti.objects.all()
+        print(recommend)
+        serializer = DetailSerializer(recommend)
         return Response(serializer.data)
 
 

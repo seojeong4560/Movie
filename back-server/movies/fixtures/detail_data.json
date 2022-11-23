@@ -1,0 +1,193 @@
+[
+  { "pk": 1,
+    "model": "movies.detail",
+    "fields": {
+        "type": "ISTJ",
+        "title" :  "진지한 모범생형",
+        "sub_title" : "사무적, 실용적, 현실도모적인 일을 많이 하는 유형으로서 등장인물들에게 인정받는 역할인 경우가 많습니다.",
+        "char" : "마블의 가모라, 해리 포터의 퍼시 위즐리, 반지의 제왕에 보로미르, 킹스맨의 해리가 있네요!",
+        "genres" : "역사와 사극 장르",
+        "img" : "https://p4.wallpaperbetter.com/wallpaper/912/246/383/zoe-saldana-as-gamora-in-avengers-infinity-war-4k-8k-wallpaper-preview.jpg"
+      }
+  },
+  { 
+    "pk": 2,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ESTJ",
+      "title" : "엄청난 능력자형",
+      "sub_title" : "사무적, 실용적, 현실도모적인 일을 많이 하는 유형으로서 등장인물들에게 인정받는 역할인 경우가 많습니다.",
+      "char" : "해리포터의 헤르미온느, 퀸카로 살아남는 법의 레지나 조지, 인사이드 아웃의 버럭이가 있네요!",
+      "genres" : "법정 장르",
+      "img" : "https://t1.daumcdn.net/cfile/tistory/2358DF4658B77A5D24"
+    }
+  },
+  { 
+    "pk": 3,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ISFJ",
+      "title" :  "용감한 수호자형",
+      "sub_title" : "정직하게 착한 캐릭터들이 많고, 주인공으로도 조연으로도 인기가 많은 캐릭터이며, 성실하고 온화하며 협조를 잘하는 캐릭터이네요.",
+      "char" : "마블의 블랙 팬서, 메이즈 러너의 뉴트, 찰리와 초콜릿 공장의 찰리, 인사이드 아웃의 소심이가 있네요!",
+      "genres" : "교육, 문화 장르",
+      "img" : "https://mblogthumb-phinf.pstatic.net/20150805_92/mjh6333_1438753417382vOeqx_JPEG/%BC%D2%BD%C9%C0%CC.jpg?type=w2"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ESFJ",
+      "title" :  "사교적인 외교관형",
+      "sub_title" : "친절과 현실감을 바탕으로 타인에게 봉사하는 캐릭터로서 능력치가 골고루 발달한 전교회장 느낌이네요.",
+      "char" : "토이스토리의 우디, 슈렉의 피오나, 라푼젤의 라푼젤, 주먹왕 랄프의 펠릭스가 있네요!",
+      "genres" : "여성물 장르",
+      "img" : "https://mblogthumb-phinf.pstatic.net/20150427_247/blogbbq_1430126175638I1h6U_JPEG/6_%C7%C7%BF%C0%B3%AA_%B0%F8%C1%D6%C0%C7_%B9%E3.jpg?type=w2"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ISTP",
+      "title" :  "만능 재주꾼형",
+      "sub_title" : "논리적이고 뛰어난 적응력을 가진 캐릭터로서 액션영화 주인공처럼 엄청 과묵하고 멋있네요.",
+      "char" : "마블의 블랙 위도우, 메이즈 러너의 토마스, 007의 제임스 본드, 뮬란의 뮬란이 있네요!",
+      "genres" : "사회풍자 장르",
+      "img" : "https://mblogthumb-phinf.pstatic.net/MjAyMTA2MjVfNDYg/MDAxNjI0NjAzMjkxNDc1.6YcLyk1UFS8_ShI2WkvPu9LtwwGYRxy32Qx-AlvcZH0g.D5LQH59FGhp_1c42XEC_8xU7FNwl3yP_lKUvow5gWssg.JPEG.minarigirl/%EB%B8%94%EB%9E%99%EC%9C%84%EB%8F%84%EC%9A%B03.jpg?type=w800"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ESTP",
+      "title" :  "모험을 즐기는 사업가형",
+      "sub_title" : "친구, 운동, 음식 등 다양한 활동을 선호하는 매릭적인 캐릭터로서 주로 바람둥이 남자 주인공 역할이 많네요.",
+      "char" : "해리포터의 드레이코 말포이, 알라딘의 알라딘, 토이스토리의 버즈, 라푼젤의 플린 라이더가 있네요!",
+      "genres" : "액션영화 장르",
+      "img" : "ttps://mblogthumb-phinf.pstatic.net/MjAxOTA2MjBfMjQx/MDAxNTYxMDI1NzM0MjE1.Rs7QMrN0SBfLryuhTrN_Ws5vFdRd5uzAHaIqVQAhJ0Yg.f4M0GSyCa_iCO_Wg-yfPpeeJj8QEeduoEHtRk14PirMg.JPEG.ghkddbsgml1/IMG_9619.JPG?type=w800"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ISFP",
+      "title" :  "호기심이 많은 예술가형",
+      "sub_title" : "성장물의 주인공으로서 장르불문 시련을 겪고 성장하는 인물로서, 따뜻한 감성을 가지고 있는 겸손한 캐릭터이네요.",
+      "char" : "해리포터의 해리포터, 트와일라잇의 벨라, 타이타닉의 로즈, 레옹의 마틸다가 있네요!",
+      "genres" : "애니메이션 장르",
+      "img" : "https://mblogthumb-phinf.pstatic.net/MjAyMTAxMzBfODMg/MDAxNjEyMDA2NDMwMTk3.guH1CtW5WnvpzYXNT-5c0p3H4zyVts6S0fZXmmCHtSkg.nHjWd9nhP4UKsNebLSROFchGffkT0_kZ2TJecClxT_Ag.JPEG.sopia3139/IMG_4403.JPG?type=w800"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ESFP",
+      "title" :  "자유로운 영혼의 연예인형",
+      "sub_title" : "에너지 넘치는 캐릭터로서 주인공, 주인공의 친구, 라이벌 등 다양하게 활용되고 분위기를 고조시키는 우호적인 사람들로서 사랑 받는 캐릭터이네요.",
+      "char" : "마블의 헐크, 해리포터의 론, 알라딘의 자스민, 타이타닉의 잭, 라이온 킹의 심바가 있네요!",
+      "genres" : "뮤지컬 장르",
+      "img" : "https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/movies/49/b48c2b2413040924.jpg"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "movies.detail",
+    "fields": {
+      "type": "INFP",
+      "title" :  "열정적인 중재자형",
+      "sub_title" : "이상적인 세상을 만들어 가는 인물들로 감성적인 영화에 나오는 외유내강형 캐릭터이고, 아주 로맨틱한 캐릭터이거나 아주 우울한 캐릭터이네요.",
+      "char" : "해리포터의 도비, 인사이드 아웃의 슬픔이, 센과 치히로의 행방불명의 치히로, 비포 선라이즈의 셀린이 있네요!",
+      "genres" : "판타지 장르",
+      "img" : "https://img.insight.co.kr/static/2018/06/28/700/121699k3f9cd8s5pav14.jpg"
+    }
+  },
+  {
+    "pk": 10,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ENFP",
+      "title" :  "재기발랄한 활동가형",
+      "sub_title" : "열정적으로 새로운 관계를 만드는 인물로서 명량한 캐릭터가 많고 주로 로맨틱 코미디에 자주 등장하네요.",
+      "char" : "마블의 피터 파커, 알라딘의 지니, 찰리와 초콜릿 공장의 윌리 윙카, 겨울 왕국의 안나, 트루먼 쇼의 트루먼이 있네요!",
+      "genres" : "모험물 장르",
+      "img" : "https://t1.daumcdn.net/cfile/tistory/15396A384F0C6CCE0D"
+    }
+  },
+  {
+    "pk": 11,
+    "model": "movies.detail",
+    "fields": {
+      "type": "INFJ",
+      "title" :  "예언자형",
+      "sub_title" : "사람과 관련된 뛰어난 통찰력을 가진 인물로서, 묘한 능력이 있는 캐릭터가 많네요.  덕분에 주인공의 조력자로 자주 등장하고 내적 갈등이 심한 캐릭터가 많아요.",
+      "char" : "마블의 로키, 해리 포터의 덤블도어, 반지의 제왕의 간달프, 트와일라잇의 에드워드, 혹성탈출의 시저가 있네요!",
+      "genres" : "드라마, 연속극 장르",
+      "img" : "https://post-phinf.pstatic.net/MjAxNzA4MTZfMjEz/MDAxNTAyODYyNzc2ODQw.uigaiA7NjSOfOWA4Bhm0Rq76yVEvecMugNgCvIwh-Zwg.x8YKAoac_CWuC1C_SuHFv9_3rjAyZ4jeu9sPgc7-6YEg.PNG/war-for_04.png?type=w1200"
+    }
+  },
+  {
+    "pk": 12,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ENFJ",
+      "title" :  "정의로운 사회운동가",
+      "sub_title" : "타인의 성장을 도모하고 협동하는 사람들로서 명량하지만 조금 더 차분하고 목표 지향적인 캐릭터가 많네요!",
+      "char" : "DC의 원더우먼, 모아나의 모아나, 인사이드 아웃의 기쁨이, 주토피아의 주디가 있네요!",
+      "genres" : "로멘틱 코미디 장르",
+      "img" : "https://t1.daumcdn.net/cfile/tistory/2256E049587DF83211"
+    }
+  },
+  { 
+    "pk": 13,
+    "model": "movies.detail",
+    "fields": {
+      "type": "INTJ",
+      "title" :  "용의주도한 전략가형",
+      "sub_title" : "전체적인 부분을 조합하여 비전을 제시하는 인물로서 똑똑하고 신념이 뚜렷해서 악역 캐릭터가 많네요.",
+      "char" : "마블의 타노스, 해리포터의 스네이프, 반지의 제왕의 사루만, 쇼생크 탈출의 앤디 듀프레인이 있네요!",
+      "genres" : "미스테리 장르",
+      "img" : "https://extmovie.com/files/attach/images/135/013/828/033/ed5b4bae022019e1297cc16372b6c485.jpg"
+    }
+  },
+  {
+    "pk": 14,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ENTJ",
+      "title" :  "지도자형",
+      "sub_title" : "비전을 가지고 사람들을 활력적으로 이끄는 인물로서 강인하고 로맨스 주인공일 경우 치명적인 매력의 소유자이네요. 지도자형으로 리드하는 캐럭터가 많네요.",
+      "char" : "마블의 닉 퓨리, 블랙 스완의 토마스, 스파이더맨의 노만 오스본, 매드 백스의 임모탄이 있네요.",
+      "genres" : "스릴러 장르",
+      "img" : "https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/movies/51/fc24baeb13333630.jpg"
+    }
+  },
+  {
+    "pk": 15,
+    "model": "movies.detail",
+    "fields": {
+      "type": "INTP",
+      "title" :  "아이디어 뱅크형",
+      "sub_title" : "수줍은 천재, 까칠한 천재, 비운의 천재 등 천재의 총 집합 캐릭터가 많네요.",
+      "char" : "굿 윌 헌팅의 윌 헌팅, 메이즈 러너의 테리사, 데스노트의 L , 히든 피겨스의 캐서린 존슨이 있네요!",
+      "genres" : "판타지 장르",
+      "img" : "https://i.pinimg.com/originals/31/ff/dc/31ffdcd2fd22f91aedb7bffcea78b889.jpg"
+    }
+  },
+  {
+    "pk": 16,
+    "model": "movies.detail",
+    "fields": {
+      "type": "ENTP",
+      "title" :  "발명가형",
+      "sub_title" : "풍부한 상상력을 가지고 새로운 것에 도전하는 인물로서 각양각색한 캐릭터가 많네요.",
+      "char" : "마블의 토니스타크, 다크 나이트의 조커, 주토피아의 닉, 반지의 제왕의 메리, 마블의 데드풀이 있네요!",
+      "genres" : "블랙 코메디 장르",
+      "img" : "https://www.justwatch.com/images/backdrop/8729117/s640/dedeupul"
+    }
+  }
+]
