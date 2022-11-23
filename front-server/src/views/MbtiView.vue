@@ -1,5 +1,7 @@
 <template>
  <div>
+  <div class="back"></div>
+  <!-- <img id="img2" src="https://s1.best-wallpaper.net/wallpaper/m/1206/Bear-toy-in-Toy-Story-3_m.jpg" alt=""> -->
   <div id="mbtibox">
     <br><br>
     <h1 id="qid">Q.</h1>
@@ -13,7 +15,7 @@
     <button  @click="findType(-1)" class="btn btn-light" id="choicebtn">{{ choice2 }}</button >
     </div>
   </div>
-  <img id="img1" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt="">
+  <!-- <img id="img1" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt=""> -->
   </div>
 </template>
 
@@ -109,6 +111,12 @@ export default {
 </script>
 
 <style scoped>
+div.back {
+  background-color: black;
+  z-index: -1;
+}
+
+
 #qid{
   color: #ECE3E3;
   font-size: 75px;
@@ -123,7 +131,7 @@ export default {
   float: left;
   margin-left: 30px;
   margin-right: 30px;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 37px;
   /* -webkit-background-clip: text;
   color: transparent;
@@ -135,9 +143,16 @@ export default {
   width: 500px;
   height: 660px;
   margin-left: 700px;
-  margin-top: 100px;
+  /* margin-top: 100px; */
+  /* position: absolute;
+  left: 35%;
+  bottom: 10%; */
+  /* float: left; */
   border-radius: 30px;
-  border: 5px solid grey;
+  border: 5px solid red;
+  margin-top: 85px;
+  /* display: flex;
+  justify-content: center; */
   
 }
 
@@ -165,10 +180,21 @@ export default {
 
 #img1{
   position: absolute;
-  right: 10px;
-  bottom: 50px;
+  left: 60%;
+  bottom: 5%;
+  /* right: 10px; */
+  /* bottom: 50px; */
   width: 700px;
+  z-index: -1;
 }
+
+/* #img2{
+  float: left;
+  padding-top:310px;
+  margin-left: 70px;
+  width: 700px;
+  
+} */
 
 
 

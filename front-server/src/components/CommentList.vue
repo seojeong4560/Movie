@@ -33,7 +33,7 @@ export default {
   border-radius: 20px;
   width: 580px;
   height: 260px;
-  background-color: #323232;
+  /* background-color: #323232; */
 }
 
 .container::-webkit-scrollbar {

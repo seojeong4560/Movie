@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="back"></div>
     <br>
       <div id="MVDetail">
       <div id="mvbox">
@@ -93,6 +94,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 #movieImage{
   width: 270px;
   float: left;
@@ -201,7 +204,7 @@ body {
   height: 380px;
   margin-left: 15px;
   /* float: right; */
-  margin-right: 10px;
+  /* margin-right: 10px; */
   position: absolute;
   right: 10px;
   top: 190px

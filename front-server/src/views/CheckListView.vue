@@ -54,13 +54,13 @@ export default {
 .container {
   overflow: auto;
   float: left;
-  margin-top: -45px;
+  margin-top: 30px;
   border-radius: 20px;
-  width: 580px;
-  height: 700px;
+  width: 2300px;
+  height: 600px;
   background-color: rgb(16, 15, 15);
   padding: 40px;
-  margin-left: 50px;
+  margin-left: 250px;
 }
 
 .container::-webkit-scrollbar {

@@ -1,7 +1,7 @@
 <template>
   <div>
     <br><br><br>
-    <h1 id="mbtititle">당신의 MBTI는?</h1>
+    <h1 id="mbtititle">당신의 영화 MBTI는?</h1>
     <h2 id="mbti">{{ mbti }}</h2>
     <p>{{title}}</p>
     <p>{{sub_title}}</p>
