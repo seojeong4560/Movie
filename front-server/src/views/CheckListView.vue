@@ -13,7 +13,7 @@
     <br><hr><br>
     <h2>추천 영화</h2>
     <br><br><br>
-    <MovieList :movies="recommended"/>
+    <MovieCardList :movies="recommended"/>
     <br><br>
 
 
@@ -22,13 +22,13 @@
 
 <script>
 import axios from 'axios'
-import MovieList from '@/components/MovieList'
+import MovieCardList from '@/components/MovieCardList'
 
 const API_URL = 'http://127.0.0.1:8000'
 export default {
   name: 'CheckListView',
   components:{
-    MovieList,
+    MovieCardList,
   },
   data(){
     return{

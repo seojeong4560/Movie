@@ -19,6 +19,7 @@ export default new Vuex.Store({
     token: null,
     username: null,
     mbti: null,
+    mbti_genres: []
   },
   plugins: [
     createPersistedState({
@@ -51,9 +52,10 @@ export default new Vuex.Store({
       state.username = null
       router.push({name: 'MovieView'})
     },
-    GET_MBTI(state, mbti){
-      state.mbti = mbti
-      // console.log(state.mbti)
+    GET_MBTI(state, payload){
+      console.log(payload)
+      state.mbti = payload.result
+      state.mbti_genres = payload.genres
       router.push({name: 'MbtiResultView'})
     }
   },

@@ -60,7 +60,7 @@ export default {
         this.char = res.data.char
         this.genres = res.data.genres
         this.img = res.data.img
-        // console.log(res)
+        console.log(res)
       })
       .catch(err => { console.log(err) })
     },    

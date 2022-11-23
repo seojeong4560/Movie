@@ -129,7 +129,6 @@ def mbti_recommend(request, type):
     if request.method == 'GET':
         recommend = Detail.objects.get(type=type)
         # recommend = Mbti.objects.all()
-        print(recommend)
         serializer = DetailSerializer(recommend)
         return Response(serializer.data)
 

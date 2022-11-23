@@ -80,29 +80,41 @@ export default {
   getResult(){
     if(this.EI > 0){
       this.result = this.result + "E"
+      this.genres.push(12, 28) // 모험, 액션
     }
     else{
       this.result = this.result + "I"
+      this.genres.push(16, 10751)
     }
     if(this.NS > 0){
       this.result = this.result + "N"
+      this.genres.push(14, 10752)
     }
     else{
       this.result = this.result + "S"
+      this.genres.push(36, 37, 99)
     }
     if(this.FT > 0){
       this.result = this.result + "F"
+      this.genres.push(18, 10402, 10749)
     }
     else{
       this.result = this.result + "T"
+      this.genres.push(27, 53)
     }
     if(this.JP > 0){
       this.result = this.result + "J"
+      this.genres.push(80, 9648)
     }
     else{
       this.result = this.result + "P"
+      this.genres.push(35, 10770)
     }
-    this.$store.commit('GET_MBTI', this.result)
+    const payload = {
+      result: this.result,
+      genres: this.genres
+    }
+    this.$store.commit('GET_MBTI', payload)
   }
  }
 
