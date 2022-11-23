@@ -1,22 +1,20 @@
 <template>
  <div>
   <div class="back"></div>
-  <!-- <img id="img2" src="https://s1.best-wallpaper.net/wallpaper/m/1206/Bear-toy-in-Toy-Story-3_m.jpg" alt=""> -->
-  <div id="mbtibox">
-    <br><br>
+  <br>
     <h1 id="qid">Q.</h1>
-    <br><br><br>
     <h2 id="titleid">{{ title }}</h2>
-    <br><br><br><br><br><br><br><br><br>
-    <div class="a">
+    <br>
+    <div class="a" id="cbtn1">
+      <img src="https://img.etnews.com/cms/uploadfiles/afieldfile/2013/09/16/477971_20130916112920_346_0001.jpg" alt="">
     <button  @click="findType(1)" class="btn btn-light" id="choicebtn">{{ choice1 }}</button >
     </div>
-    <div class="a">
+    <div class="a" id="cbtn2">
+      <img src="https://img.insight.co.kr/static/2021/07/02/700/img_20210702112100_f33w552m.webp" alt="">
     <button  @click="findType(-1)" class="btn btn-light" id="choicebtn">{{ choice2 }}</button >
     </div>
   </div>
-  <!-- <img id="img1" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt=""> -->
-  </div>
+  
 </template>
 
 <script>
@@ -120,17 +118,17 @@ div.back {
 #qid{
   color: #ECE3E3;
   font-size: 75px;
-  float: left;
-  margin-left: 30px;
+  /* float: left; */
+  margin-right: 550px;
   font-weight: bold;
   
 }
 
 #titleid{
   color: #ECE3E3;
-  float: left;
-  margin-left: 30px;
-  margin-right: 30px;
+  font-weight: bold;
+  /* margin-left: 30px; */
+  /* margin-right: 30px; */
   /* font-weight: bold; */
   font-size: 37px;
   /* -webkit-background-clip: text;
@@ -138,27 +136,29 @@ div.back {
   text-shadow: -1px 0 lightgrey, 0 1px rgb(28, 27, 27), 1px 0 rgb(94, 85, 85); */
 }
 
-#mbtibox{
-  background-color: rgb(16, 15, 15);
-  width: 500px;
-  height: 660px;
-  margin-left: 700px;
-  /* margin-top: 100px; */
-  /* position: absolute;
-  left: 35%;
-  bottom: 10%; */
-  /* float: left; */
+
+img{
+  width: 650px;
   border-radius: 30px;
-  border: 5px solid red;
-  margin-top: 85px;
-  /* display: flex;
-  justify-content: center; */
-  
+  float: left;
+}
+
+
+#cbtn1{
+  float: left;
+  margin-left: 300px;
+  width: 650px;
+}
+
+#cbtn2{
+  float: left;
+  margin-left: 20px;
+  width: 650px;
 }
 
 #choicebtn{
   margin: 5px;
-  width: 400px;
+  width: 650px;
   padding: 20px;
   border-radius: 15px;
   /* border: 0.5px solid; */
@@ -168,33 +168,39 @@ div.back {
 
 }
 
+/* .a img{
+  transition: all 0.5s linear;
+}
+
+.a:hover img{
+  transform: scale(1.05);
+}
+
 .a button {
-  transition: all 0.2s linear;
+  transition: all 0.5s linear;
 }
 .a:hover button {
   transform: scale(1.05);
   background-color: red;
   border: 5px solid red;
   color: white;
-}
-
-#img1{
-  position: absolute;
-  left: 60%;
-  bottom: 5%;
-  /* right: 10px; */
-  /* bottom: 50px; */
-  width: 700px;
-  z-index: -1;
-}
-
-/* #img2{
-  float: left;
-  padding-top:310px;
-  margin-left: 70px;
-  width: 700px;
-  
 } */
+
+.a {
+  transition: all 0.7s linear;
+}
+
+.a:hover {
+  transform: scale(1.05);
+  
+}
+
+.a:hover button {
+  background-color: red;
+  border: solid red;
+} 
+
+
 
 
 
