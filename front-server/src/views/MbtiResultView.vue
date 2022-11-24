@@ -9,20 +9,17 @@
     <br><br>
     <p id="title">"{{title}}"</p>
     </div>
-    <br><br><br>
+    <br>
     <div id="resultbox">
     <h1 id="h1tag">당신은</h1>
-    <br><br><br><br>
     <p id="sub_title">{{sub_title}}</p>
+    <br><br><br>
     <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1>
-    <br><br><br><br><br>
     <p id="char">{{char}}</p>
-    <h1 id="h1tag">당신에게 아래 장르를 추천드려요.</h1>
-    <br><br><br><br><br><br>
-    <p id="genres">{{genres}}</p>
-    <br><br><br><br>
-    <MovieList :movies="recommended"/>
+    <br><br><br>
     </div>
+    <h1 id="h1tag">당신에게 이 영화를 추천드려요.</h1>
+    <!-- <p id="genres">{{genres}}</p> -->
   </div>
 </template>
 
@@ -100,13 +97,13 @@ export default {
 <style scoped>
 #mbtititle{
   color: white;
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   
 }
 
 #mbti{
-  color: skyblue;
+  color: rgb(235, 135, 135);
   font-size: 60px;
 }
 
@@ -130,10 +127,11 @@ img{
   font-size: 20px;
   /* font-weight: bold; */
   /* font-style: italic; */
-  float: left;
-  padding-left: 60px;
-  font-weight: bold;
-  padding-right: 60px;
+  /* float: left; */
+  /* padding-left: 60px; */
+  /* font-weight: bold; */
+  /* padding-right: 60px; */
+
 }
 
 #char{
@@ -141,9 +139,9 @@ img{
   font-size: 20px;
   /* font-weight: bold; */
   /* font-style: italic; */
-  float: left;
-  padding-left: 60px;
-  font-weight: bold;
+  /* float: left; */
+  /* padding-left: 60px; */
+  /* font-weight: bold; */
 }
 
 #genres{
@@ -151,37 +149,41 @@ img{
   font-size: 20px;
   /* font-weight: bold; */
   /* font-style: italic; */
-  float: left;
-  padding-left: 60px;
-  font-weight: bold;
+  /* float: left; */
+  /* padding-left: 60px; */
+  /* font-weight: bold; */
 }
 
 #mbtibox{
-  float: left;
+  /* float: left;
   padding-left: 100px;
-  padding-top: 20px;
+  padding-top: 20px; */
 }
 
 
 #resultbox{
-  float: left;
+  /* float: left;
   margin-left: 100px;
-  padding-top: 40px;
+  padding-top: 40px; */
   /* border:3px solid white; */
-  width: 1100px;
-  border-radius:70px;
-  background-color: #100F0F;
+  width: 500px;
+  /* border-radius:70px; */
+  /* background-color: #100F0F; */
+  margin-left: auto; margin-right: auto;
+  
 }
 
 #h1tag{
-  float: left;
-  padding-left: 60px;
+  /* float: left; */
+  /* padding-left: 60px; */
   font-style: italic;
   font-weight: bold;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   color: white;
   
 }
+
+
 
 
 

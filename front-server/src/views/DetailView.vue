@@ -15,10 +15,9 @@
       <p id="overview">{{movie.overview}}</p>
       <star-rating :increment="0.01" :fixed-points="2" id="star"></star-rating>
       <br>
-        <button id="btn1" type="button" class="btn btn-danger">Play</button>
+        <!-- <button id="btn1" type="button" class="btn btn-danger">Play</button>
         <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 
-        <button id="btn2" type="button" class="btn btn-light">+</button> 
-    </div>
+        <button id="btn2" type="button" class="btn btn-light">+</button>  -->
         <div id="commentForm">
           <CommentForm 
             :movie-id = "movieId"
@@ -27,7 +26,8 @@
           <CommentList :comments="commentSet"/>
         </div>
     </div>
-    
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="movieList">
       <hr id = "hr">
       <h2 id="h2word">관련 영화</h2>
@@ -97,7 +97,7 @@ export default {
 
 
 #movieImage{
-  width: 270px;
+  width: 350px;
   float: left;
   margin-left: 30px;
   margin-right: 20px;
@@ -136,7 +136,7 @@ export default {
   height: 15px;
 }
 
-#btn1{
+/* #btn1{
   width: 100px;
   height: 45px;
   margin-bottom: 80px;
@@ -154,7 +154,7 @@ export default {
   width: 60px;
   height: 45px;
   margin-bottom: 80px;
-}
+} */
 
 #img1{
   width: 35px;
@@ -198,22 +198,24 @@ body {
 }
 
 #commentForm{
-  background-color: rgb(16, 15, 15);
-  width: 650px;
+  background-color: rgb(24, 23, 23);
+  width: 920px;
   border-radius: 20px;
-  height: 380px;
-  margin-left: 15px;
+  height: 250px;
+  margin-top: 10px;
+  /* margin-left: 10px; */
   /* float: right; */
   /* margin-right: 10px; */
-  position: absolute;
+  /* position: absolute;
   right: 10px;
-  top: 190px
+  top: 190px */
+  float: left;
   
   
 }
 
 #mvbox{
-  width: 1200px;
+  width: 1800px;
 }
 
 #star{

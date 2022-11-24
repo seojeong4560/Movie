@@ -31,8 +31,8 @@ export default {
   float: left;
   margin-top: -45px;
   border-radius: 20px;
-  width: 580px;
-  height: 260px;
+  width: 860px;
+  height: 140px;
   /* background-color: #323232; */
 }
 
