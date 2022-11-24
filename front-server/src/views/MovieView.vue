@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <div class="back"></div> -->
     <div class="box-wrap">
       <div class="box">
         <div class="a">
@@ -17,7 +18,7 @@
     </div>
     <br><br>
     <h3 id="mdh3">I</h3>
-    <h2 id="h2word">{{this.$store.state.mbti_title}}형인 {{this.$store.state.username}}님에게 추천하는 영화</h2>
+    <h2 id="h2word">{{this.$store.state.mbti_title}} {{ mbti }} {{this.$store.state.username}}님에게 추천하는 영화</h2>
     <br><br><br>
     <MovieList :movies="mbti_movies"/>
     <br><hr><br>
@@ -93,9 +94,11 @@ body {
   background-color: black;
 }
 
+
+
 #mainimg{
-  width: 1100px;
-  height: 500px;
+  width: 1894px;
+  height: 600px;
 }
 
 #h2word{
@@ -124,38 +127,34 @@ body {
   
 }
 
-.a img {
+/* .a img {
   transition: all 0.5s linear;
 }
 .a:hover img {
   transform: scale(1.05);
-}
+} */
 
 
-.box {
+
+
+/* .box {
   position: relative;
-  /* width: 400px; height: 300px; */
-  /* border: 7px solid #283593; */
   box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-}
+} */
 
-.box img {
+/* .box img {
   width: 100%;
-  padding: 10px;
-}
+  
+} */
 
 .box .info {
   color: black;
-  /* font-weight: bolder; */
-  position: absolute; left: 0%; top: 40%;
+  position: absolute; left: 0%; top: 50%;
   background: rgba(15, 15, 15, 0.555);
   width: 100%;
-  height: 320px;
-  /* padding: 15px; */
+  height: 370px;
   box-sizing: border-box;
-  /* opacity: 0; */
-  /* transition: opacity 0.9s ease-in-out; */
-  
+
 }
 
 .box:hover .info {
@@ -201,7 +200,7 @@ body {
 }
 
 .a button{
-  transition: all 0.5s linear;
+  transition: all 0.3s linear;
 }
 
 .a:hover button {

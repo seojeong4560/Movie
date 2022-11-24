@@ -17,7 +17,7 @@
       <input id="submit_logIn" type="submit" value="logIn" class="btn btn-danger" >
   </form>
   </div>
-  <img id="img2" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt="">
+  <!-- <img id="img2" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt=""> -->
 </div>
 </template>
 
