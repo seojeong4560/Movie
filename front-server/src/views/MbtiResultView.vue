@@ -118,6 +118,7 @@ img{
   width: 390px;
   height: 350px;
   /* border:3px solid white; */
+  /* box-shadow: 1px 1px 3px 1px #636363; */
 }
 
 #title{

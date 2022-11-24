@@ -3,6 +3,7 @@
     <nav class="navbar">
       <a class="navbar-brand">
         <button id="logo" type="button" class="btn btn-danger" @click="home">YangGang </button>
+        <p id="logo" @click="home">YangGang</p>
         <!-- <img src="@/assets/logo.png" width="200px" alt="logo" @click="home" id="logo"> -->
       </a>
       <div v-if="isUserLogin">
@@ -68,9 +69,10 @@ export default {
 
 #logo{
   width: 130px;
-  font-size: 20px;
-  background-color: red;
+  font-size: 40px;
+  color: red;
   font-weight: bold;
+  font-style: italic;
 }
 
 body{
@@ -106,7 +108,7 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
 }
 
 nav a.router-link-exact-active {

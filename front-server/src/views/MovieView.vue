@@ -14,7 +14,8 @@
           <button id="mainbtn" type="button" class="btn btn-danger" @click="checkList">Let's go Choose</button>
           </div>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
     <br><br>
@@ -105,12 +106,12 @@ body {
 }
 
 #boxwrap{
-  height: 750px;
+  height: 620px;
 }
 
 #mainimg{
-  width: 1894px;
-  height: 750px;
+  width: 1594px;
+  height: 620px;
 }
 
 #h2word{
@@ -164,7 +165,7 @@ body {
   position: absolute; left: 0%; top: 50%;
   background: rgba(15, 15, 15, 0.555);
   width: 100%;
-  height: 440px;
+  height: 350px;
   box-sizing: border-box;
 
 }
@@ -203,7 +204,7 @@ body {
 #mainbtn{
   float: left;
   margin-left: 45px;
-  /* background-color: red; */
+  background-color: red;
   width: 200px;
   height: 50px;
   font-size: 20px;

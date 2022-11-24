@@ -47,7 +47,7 @@ export default {
 
 <style scoped>
 img{
-  width: 400px;
+  width: 325px;
 }
 
 div.back {

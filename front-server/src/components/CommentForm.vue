@@ -3,9 +3,9 @@
       <br>
       <div class="col-auto">
       <input type="text" v-model="content" class="form-control" id="inputid" placeholder="감상평을 등록해주세요.">
-      </div>
       <div class="col-auto">
       <input type="submit" id="submit" class="btn btn-danger">
+      </div>
       </div>
     </form>
 </template>
@@ -61,14 +61,13 @@ export default {
 }
 
 #submit{
-  /* float: right; */
+  float: left;
   position: absolute;
-  top: 498px;
-  left : 1210px;
+  top: 514px;
+  left : 1200px;
   height: 46px;
   width: 80px;
   background-color: red;
-  margin-top: -20px;
   height: 50px;
   
 }

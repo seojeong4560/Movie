@@ -33,6 +33,7 @@
       <h2 id="h2word">관련 영화</h2>
       <MovieList :movies="sameGenres"/>
     </div>
+    <br>
   </div>
 </template>
 
