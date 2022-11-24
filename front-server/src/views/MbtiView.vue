@@ -11,11 +11,11 @@
       <div id="allbox">
     <div class="a" id="cbtn1">
       <img :src="img1" alt="" id="img1">
-    <button  @click="findType(1)" class="btn btn-dark" id="choicebtn">{{ choice1 }}</button >
+    <button  @click="findType(1)"  id="choicebtn">{{ choice1 }}</button >
     </div>
     <div class="a" id="cbtn2">
       <img :src="img2" alt="" id="img2">
-    <button  @click="findType(-1)" class="btn btn-dark" id="choicebtn">{{ choice2 }}</button >
+    <button  @click="findType(-1)"  id="choicebtn">{{ choice2 }}</button >
       </div>
     </div>
     </div>
@@ -154,6 +154,8 @@ div.back {
   
 }
 
+
+
 #qid{
   color: white;
   font-size: 75px;
@@ -166,7 +168,7 @@ div.back {
 
 
 #numq{
-  color: grey;
+  color: rgb(172, 0, 0);
   font-size: 25px;
   margin-top: 20px;
   margin-left: 10px;
@@ -231,13 +233,14 @@ div.back {
   padding: 20px;
   border-radius: 15px;
   /* border: 0.5px solid; */
-  font-size: 20px;
-  color: white;
+  font-size: 22px;
+  color: black;
   font-weight: bold;
   /* background-color: rgb(23, 22, 22); */
   /* border: solid rgb(23, 22, 22); */
   /* margin-left: auto; margin-right: auto; */
   margin-right: 48px;
+  margin-top: 10px;
 
 }
 
@@ -272,6 +275,7 @@ div.back {
 .a:hover button {
   background-color: red;
   border: solid red;
+  color: white;
 } 
 
 

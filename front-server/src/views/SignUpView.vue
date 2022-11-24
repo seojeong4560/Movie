@@ -18,6 +18,7 @@
       <input id="sigunUpbtn" type="submit" value="SignUp" class="btn btn-danger">
     </form>
     <img src="https://t1.daumcdn.net/cfile/tistory/2255384755AA0EB02C" alt="">
+    <br><br>
   </div>
 </template>
 

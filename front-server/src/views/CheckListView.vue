@@ -88,10 +88,10 @@ export default {
 } */
 
 .a button {
-  transition: all 0.4s linear;
+  transition: all 0.6s linear;
 }
 .a:hover button {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 
@@ -129,6 +129,7 @@ input{
 
 #genrename{
   font-size: 25px;
+  /* font-weight: bold; */
 
 }
 
@@ -173,7 +174,7 @@ input[type="checkbox"]:checked::after {
 
 #recotitle{
   color: azure;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 35px;
 }
 
