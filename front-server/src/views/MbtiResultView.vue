@@ -19,7 +19,7 @@
     <br><br><br>
     </div>
     <h1 id="h1tag">당신에게 이 영화를 추천드려요.</h1>
-    <!-- <p id="genres">{{genres}}</p> -->
+    <MovieList :movies="recommended"/>
   </div>
 </template>
 
