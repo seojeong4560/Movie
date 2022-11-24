@@ -1,6 +1,7 @@
 <template>
   <div>
-    <br>
+    <br><br><br>
+    <div id="allbox">
     <div id="mbtibox">
     <h1 id="mbtititle">당신의 영화 MBTI는?</h1>
     <h2 id="mbti">{{ mbti }}</h2>
@@ -13,11 +14,11 @@
     <div id="resultbox">
     <!-- <h1 id="h1tag">당신은</h1> -->
     <p id="sub_title">당신은 {{sub_title}} 당신과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
-    <br><br><br>
+    </div>
     <!-- <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1> -->
     <!-- <p id="char">{{char}}</p> -->
-    <br>
     </div>
+    <br><br><br>
     <div id="movieswipe">
     <h1 id="h1tag">당신에게 아래의 영화를 추천드려요</h1>
     <hr id="hr">
@@ -120,7 +121,7 @@ img{
 }
 
 #title{
-  color: rgb(240, 71, 71);
+  color: rgb(236, 126, 126);
   font-size: 30px;
   font-weight: bold;
   /* font-style: italic; */
@@ -163,6 +164,15 @@ img{
   /* float: left;
   padding-left: 100px;
   padding-top: 20px; */
+  
+}
+
+#allbox{
+  padding: 35px;
+  border:1px solid white;
+  border-radius: 40px;
+  width: 500px;
+  margin-left: auto; margin-right: auto;
 }
 
 
@@ -191,6 +201,7 @@ img{
 #movieswipe{
   width: 930px;
   margin-left: auto; margin-right: auto;
+  
 }
 
 

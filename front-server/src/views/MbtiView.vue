@@ -1,10 +1,12 @@
 <template>
  <div>
   <div class="back"></div>
+  <div id="abox">
   <div id="qbox">
     <h1 id="qid">Q.{{num}}<span id="numq">{{num}}/12</span></h1>
     <h2 id="titleid">{{ title }}</h2>
   </div>
+  <br><br><br><br><br><br>
     <br><br>
       <div id="allbox">
     <div class="a" id="cbtn1">
@@ -15,6 +17,7 @@
       <img :src="img2" alt="" id="img2">
     <button  @click="findType(-1)" class="btn btn-dark" id="choicebtn">{{ choice2 }}</button >
       </div>
+    </div>
     </div>
   </div>
   
@@ -135,9 +138,20 @@ div.back {
   z-index: -1;
 }
 
+#abox{
+  width: 1000px;
+}
+
 #qbox{
   width: 700px;
+  margin-left: 580px; margin-right: auto;
+}
+
+#allbox{
   margin-left: auto; margin-right: auto;
+  width: 1800px;
+  margin-left: 200px;
+  
 }
 
 #qid{
@@ -174,6 +188,8 @@ div.back {
   
 }
 
+
+
 /* img{
   width: 700px;
   height: 400px;
@@ -199,7 +215,7 @@ div.back {
 
 #cbtn1{
   float: left;
-  margin-left: 250px;
+  /* margin-left: 250px; */
   width: 760px;
 }
 
@@ -221,7 +237,7 @@ div.back {
   /* background-color: rgb(23, 22, 22); */
   /* border: solid rgb(23, 22, 22); */
   /* margin-left: auto; margin-right: auto; */
-  margin-right: 40px;
+  margin-right: 48px;
 
 }
 

@@ -2,7 +2,8 @@
   <div id="app">
     <nav class="navbar">
       <a class="navbar-brand">
-        <img src="https://t1.daumcdn.net/cfile/tistory/2255384755AA0EB02C" width="200px" alt="logo" @click="home">
+        <button id="logo" type="button" class="btn btn-danger" @click="checkList">YangGang </button>
+        <!-- <img src="@/assets/logo.png" width="200px" alt="logo" @click="home" id="logo"> -->
       </a>
       <div v-if="isUserLogin">
         <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>
@@ -64,6 +65,14 @@ export default {
   background-image: url("https://user-images.githubusercontent.com/33485020/108069438-5ee79d80-7089-11eb-8264-08fdda7e0d11.jpg");
   
 } */
+
+#logo{
+  width: 130px;
+  font-size: 20px;
+  background-color: red;
+  font-weight: bold;
+}
+
 body{
   background-color: black;
 }

@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="back"></div>
-  <br><br><br><br>
+  <img src="https://t1.daumcdn.net/cfile/tistory/2255384755AA0EB02C" alt="">
   <div id="Loginbox">
   <form @submit.prevent="logIn">
   <h1 id="LogInPage">LogIn Page</h1>
@@ -46,6 +46,10 @@ export default {
 </script>
 
 <style scoped>
+img{
+  width: 400px;
+}
+
 div.back {
   /* width: 100vw;
   height: 90vh; */

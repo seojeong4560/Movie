@@ -1,12 +1,12 @@
 <template>
   <div>
     <!-- <div class="back"></div> -->
-    <div class="box-wrap">
+    <div id="boxwrap" class="box-wrap" :style="`background-image: url(${this.$store.state.randomMovie}); background-size: cover; background-position: center;`">
       <div class="box">
-        <div class="a">
-          <img id="mainimg" :src="this.$store.state.randomMovie" alt="">
-        </div>
-        <div class="info">
+        <!-- <div class="a">
+          <img id="mainimg" :src="this.$store.state.randomMovie" alt="" style="background-repeat: no-repeat;">
+        </div> -->
+        <div class="info" style="background-size: cover; background-position: center;">
           <br>
           <h1 id="h1tag">오늘은 이런 영화 어때요?</h1>
           <br><br><br><br>
@@ -14,6 +14,7 @@
           <button id="mainbtn" type="button" class="btn btn-danger" @click="checkList">Let's go Choose</button>
           </div>
         </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       </div>
     </div>
     <br><br>
@@ -94,11 +95,13 @@ body {
   background-color: black;
 }
 
-
+#boxwrap{
+  height: 750px;
+}
 
 #mainimg{
   width: 1894px;
-  height: 600px;
+  height: 750px;
 }
 
 #h2word{
@@ -152,7 +155,7 @@ body {
   position: absolute; left: 0%; top: 50%;
   background: rgba(15, 15, 15, 0.555);
   width: 100%;
-  height: 370px;
+  height: 440px;
   box-sizing: border-box;
 
 }
@@ -191,7 +194,7 @@ body {
 #mainbtn{
   float: left;
   margin-left: 45px;
-  background-color: red;
+  /* background-color: red; */
   width: 200px;
   height: 50px;
   font-size: 20px;
