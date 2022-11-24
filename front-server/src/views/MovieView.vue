@@ -3,7 +3,7 @@
     <div class="box-wrap">
       <div class="box">
         <div class="a">
-          <img id="mainimg" src="https://t1.daumcdn.net/cfile/tistory/2544DC3C55C17C9005" alt="">
+          <img id="mainimg" :src="this.$store.state.randomMovie" alt="">
         </div>
         <div class="info">
           <br>
@@ -17,11 +17,15 @@
     </div>
     <br><br>
     <h3 id="mdh3">I</h3>
+    <h2 id="h2word">{{this.$store.state.mbti_title}}형인 {{this.$store.state.username}}님에게 추천하는 영화</h2>
+    <br><br><br>
+    <MovieList :movies="mbti_movies"/>
+    <br><hr><br>
+    <h3 id="mdh3">I</h3>
     <h2 id="h2word">최신 개봉 영화</h2>
     <br><br><br>
     <MovieList :movies="latest_movies"/>
     <br><hr><br>
-    
     <h3 id="mdh3">I</h3>
     <h2 id="h2word">평점 높은 영화</h2>
     <br><br><br>
@@ -49,7 +53,8 @@ export default {
     MovieList,
   },
   created(){
-    this.getMovieList()
+    this.getMovieList(),
+    this.randomMovie()
   },
   computed: {
     upcomming_movies(){
@@ -63,6 +68,9 @@ export default {
     },
     like_movies(){
       return this.$store.state.like_movies
+    },
+    mbti_movies(){
+      return this.$store.state.mbti_movies
     }
   },
   methods: {
@@ -71,6 +79,9 @@ export default {
     },
     checkList(){
       return this.$router.push({name: 'CheckListView'})
+    },
+    randomMovie(){
+      return this.$store.commit('RANDOM_MOVIE_PICK')
     }
   }
 

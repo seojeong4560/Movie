@@ -83,7 +83,7 @@ export default {
         this.movie = res.data.movie
         this.sameGenres = res.data.same_genres
         this.commentSet = res.data.movie.comment_set
-        console.log(res)
+        // console.log(res)
       })
       .catch(err => { console.log(err) })
     },

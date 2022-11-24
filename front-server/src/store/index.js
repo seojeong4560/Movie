@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import createPersistedState from 'vuex-persistedstate'
 import router from '@/router'
+import _ from 'lodash'
 
 Vue.use(Vuex)
 
@@ -18,8 +19,12 @@ export default new Vuex.Store({
     checked_genres: [],
     token: null,
     username: null,
+    randomMovie: null,
+
     mbti: null,
-    mbti_genres: []
+    mbti_movies : [],
+    mbti_title: null,
+    mbti_genres: [],
   },
   plugins: [
     createPersistedState({
@@ -37,7 +42,7 @@ export default new Vuex.Store({
       state.latest_movies = movieList.latest_movies
       state.highscore_movies = movieList.highscore_movies
       state.like_movies = movieList.like_movies
-      // console.log(state.latest_movies)
+      console.log(state.latest_movies)
     },
     GET_GENRE_LIST(state, genres){
       state.genres = genres.genres
@@ -53,10 +58,19 @@ export default new Vuex.Store({
       router.push({name: 'MovieView'})
     },
     GET_MBTI(state, payload){
-      console.log(payload)
       state.mbti = payload.result
       state.mbti_genres = payload.genres
+      // console.log(state.mbti_genres)
       router.push({name: 'MbtiResultView'})
+    },
+    GET_MBTI_MOVIES(state, payload){
+      state.mbti_movies = payload.recommended
+      state.mbti_title = payload.mbti_title
+      // console.log(state.mbti_title)
+    },
+    RANDOM_MOVIE_PICK(state){
+      state.randomMovie = `https://themoviedb.org/t/p/original${_.sample(state.latest_movies, 1).backdrop_path}`
+      // console.log(state.randomMovie)
     }
   },
   actions: {

@@ -32,7 +32,15 @@ class CommentSerializer(serializers.ModelSerializer):
 class MovieSerializer(serializers.ModelSerializer): 
     class Meta : 
         model = Movie
-        fields = ('id', 'title', 'poster_path', 'comment_set', 'vote_average','release_date')
+        fields = ('id', 'title', 'poster_path', 'backdrop_path', 'comment_set', 'vote_average', 'release_date')
+
+
+
+class MovieBackdropSerializer(serializers.ModelSerializer): 
+    class Meta : 
+        model = Movie
+        fields = ('backdrop_path')
+
 
 
 class MovieDetailSerializer(serializers.ModelSerializer): 

@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     movieImgURL(){
-      return `https://themoviedb.org/t/p/w300_and_h300_bestv2${this.movie.poster_path}`
+      return `https://themoviedb.org/t/p/original${this.movie.backdrop_path}`
     },
   },
   methods: {

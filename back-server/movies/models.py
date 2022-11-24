@@ -20,7 +20,7 @@ class Movie(models.Model) :
     vote_count = models.IntegerField()
     overview = models.TextField()
     poster_path = models.CharField(max_length=200)
-
+    backdrop_path = models.CharField(max_length=200)
     def __str__(self):
         return self.title
 

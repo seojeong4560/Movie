@@ -23,15 +23,6 @@ export default {
     comment: Object,
   },
   methods:{
-    // updateComment(){
-    //   axios({
-    //     method: 'put',
-    //     url: `${API_URL}/api/movies/comments/${this.comment.id}/`,
-    //     data: {
-    //       content: content,
-    //     }
-    //   })
-    // },
     deleteComment(){
       axios({
         method: 'delete',

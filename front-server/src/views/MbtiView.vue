@@ -2,8 +2,9 @@
  <div>
   <div class="back"></div>
   <br>
-    <h1 id="qid">Q.</h1>
+    <h1 id="qid">Q.{{num}}</h1>
     <h2 id="titleid">{{ title }}</h2>
+    <span>{{num}}/12</span>
     <br>
     <div class="a" id="cbtn1">
       <img src="https://img.etnews.com/cms/uploadfiles/afieldfile/2013/09/16/477971_20130916112920_346_0001.jpg" alt="">
@@ -114,6 +115,7 @@ export default {
       result: this.result,
       genres: this.genres
     }
+    // console.log(payload)
     this.$store.commit('GET_MBTI', payload)
   }
  }

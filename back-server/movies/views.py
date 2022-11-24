@@ -12,11 +12,12 @@ from rest_framework import status
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import get_user_model
 from .models import Movie, Genre, Comment, Mbti, Detail
-from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer, DetailSerializer
+from .serializers import MovieSerializer, GenreSerializer, MovieDetailSerializer, CommentSerializer, MbtiSerializer, DetailSerializer, MovieBackdropSerializer
 
 from django.http.response import JsonResponse
 from datetime import datetime
 import ast
+import random
 
 
 @api_view(['GET'])
@@ -85,6 +86,15 @@ def movie_detail(request, movie_pk) :
         }
 
         return Response(context)
+
+
+# @api_view(['GET'])
+# def random_backdrop(request) :
+#     if request.method == 'GET':
+#         backdrop = Movie.objects.get()
+#         serializer = MovieBackdropSerializer(movie)
+
+#         return Response(serializer.data)
 
 
 @api_view(['GET'])
