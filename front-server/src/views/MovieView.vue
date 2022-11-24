@@ -27,9 +27,11 @@
       <br><hr><br>
     </div>
     <div v-if="!this.$store.state.mbti" >
-      <p>아직 MBTI를 통한 영화를 추천받지 못하였네요</p>
-      <button @click="mbti">mbti로 영화추천받기</button>
+      <h3 id="mdh3">I</h3>
+      <h2 id="h2word">아직 MBTI를 통한 영화를 추천받지 못하였네요</h2>
+      <button id="startbtn" type="button" class="btn btn-danger" @click="mbti">mbti로 영화추천받기</button>
     </div>
+    <br>
     <h3 id="mdh3">I</h3>
     <h2 id="h2word">최신 개봉 영화</h2>
     <br><br><br>
@@ -123,6 +125,18 @@ body {
   text-shadow: -1px 0 rgb(238, 231, 231), 0 1px rgb(244, 237, 237);
   float: left;
 
+}
+
+#startbtn{
+  position: relative;
+  right: 540px;
+  bottom: 4px;
+  background-color: rgb(226, 20, 20);
+  font-style: italic;
+  width: 190px;
+  font-weight: bold;
+  border-radius: 20px;
+  
 }
 
 #mdh3{

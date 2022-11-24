@@ -13,7 +13,8 @@
     <br>
     <div id="resultbox">
     <!-- <h1 id="h1tag">당신은</h1> -->
-    <p id="sub_title">당신은 {{sub_title}} 당신과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
+    <p id="sub_title">당신은 {{sub_title}} </p>
+    <p id="sub_title">당신과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
     </div>
     <!-- <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1> -->
     <!-- <p id="char">{{char}}</p> -->
@@ -102,7 +103,7 @@ export default {
 <style scoped>
 
 #mbtititle{
-  color: white;
+  color: rgba(255, 255, 255, 0.974);
   font-size: 30px;
   font-weight: bold;
   
@@ -166,14 +167,16 @@ img{
   padding-left: 100px;
   padding-top: 20px; */
   
+  
 }
 
 #allbox{
   padding: 35px;
-  border:1px solid white;
+  border:1px solid rgb(58, 54, 54);
   border-radius: 40px;
   width: 500px;
   margin-left: auto; margin-right: auto;
+  background-color: rgb(22, 21, 21);
 }
 
 
@@ -195,7 +198,7 @@ img{
   font-style: italic;
   font-weight: bold;
   /* margin-top: 25px; */
-  color: white;
+  color: rgba(255, 255, 255, 0.882);
   
 }
 
