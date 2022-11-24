@@ -46,7 +46,7 @@ export default {
 <style scoped>
 #imgitem{
   float: left;
-  padding-left: 5px;
+  /* padding-left: 5px; */
   /* padding-bottom: 50px ; */
   transition: all 0.4s linear;
   width: 315px;
@@ -76,12 +76,12 @@ export default {
   /* border: 7px solid #283593; */
   box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   padding-left: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 .box img {
   width: 100%;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 

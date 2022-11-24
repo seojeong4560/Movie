@@ -55,16 +55,16 @@ export default {
 #inputid{
   float: left;
   margin-top: -20px;
-  width: 500px;
+  width: 800px;
   height: 50px;
   
 }
 
 #submit{
-  float: left;
-  /* position: absolute;
-  top: 610px;
-  left : 470px; */
+  /* float: right; */
+  position: absolute;
+  top: 498px;
+  left : 1210px;
   height: 46px;
   width: 80px;
   background-color: red;

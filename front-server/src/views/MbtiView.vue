@@ -5,13 +5,15 @@
     <h1 id="qid">Q.</h1>
     <h2 id="titleid">{{ title }}</h2>
     <br>
+      <div id="allbox">
     <div class="a" id="cbtn1">
-      <img src="https://img.etnews.com/cms/uploadfiles/afieldfile/2013/09/16/477971_20130916112920_346_0001.jpg" alt="">
+      <img :src="img1" alt="">
     <button  @click="findType(1)" class="btn btn-dark" id="choicebtn">{{ choice1 }}</button >
     </div>
     <div class="a" id="cbtn2">
-      <img src="https://img.insight.co.kr/static/2021/07/02/700/img_20210702112100_f33w552m.webp" alt="">
+      <img :src="img2" alt="">
     <button  @click="findType(-1)" class="btn btn-dark" id="choicebtn">{{ choice2 }}</button >
+      </div>
     </div>
   </div>
   
@@ -30,6 +32,8 @@ export default {
     type: null,
     choice1: null,
     choice2: null,
+    img1: null, 
+    im2: null,
     EI: 0,
     NS: 0,
     FT: 0,
@@ -73,6 +77,8 @@ export default {
       this.type = res.data.type
       this.choice1 = res.data.choice1
       this.choice2 = res.data.choice2
+      this.img1 = res.data.picture1
+      this.img2 = res.data.picture2
       // console.log(this.title)
     })
     .catch(err => {console.log(err)})
@@ -129,16 +135,18 @@ div.back {
 
 
 #qid{
-  color: #ECE3E3;
+  color: white;
   font-size: 75px;
   /* float: left; */
   margin-right: 550px;
   font-weight: bold;
   
+  
+  
 }
 
 #titleid{
-  color: #ECE3E3;
+  color:white;
   font-weight: bold;
   /* margin-left: 30px; */
   /* margin-right: 30px; */
@@ -147,31 +155,35 @@ div.back {
   /* -webkit-background-clip: text;
   color: transparent;
   text-shadow: -1px 0 lightgrey, 0 1px rgb(28, 27, 27), 1px 0 rgb(94, 85, 85); */
+  
 }
 
 
+
 img{
-  width: 650px;
+  width: 700px;
+  height: 400px;
   border-radius: 30px;
   float: left;
+  margin-left: 5px;
 }
 
 
 #cbtn1{
   float: left;
-  margin-left: 300px;
-  width: 650px;
+  margin-left: 250px;
+  width: 760px;
 }
 
 #cbtn2{
   float: left;
-  margin-left: 20px;
-  width: 650px;
+  /* margin-left: 20px; */
+  width: 760px;
 }
 
 #choicebtn{
-  margin: 5px;
-  width: 650px;
+  /* margin: 5px; */
+  width: 705px;
   padding: 20px;
   border-radius: 15px;
   /* border: 0.5px solid; */
@@ -180,6 +192,8 @@ img{
   font-weight: bold;
   /* background-color: rgb(23, 22, 22); */
   /* border: solid rgb(23, 22, 22); */
+  /* margin-left: auto; margin-right: auto; */
+  margin-right: 40px;
 
 }
 
@@ -203,6 +217,7 @@ img{
 
 .a {
   transition: all 0.7s linear;
+  margin-left: auto; margin-right: auto;
 }
 
 .a:hover {
