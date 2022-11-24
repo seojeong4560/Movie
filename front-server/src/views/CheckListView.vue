@@ -6,12 +6,16 @@
       v-for="genre in genres"
       :key="genre.id"
     >
-      <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
-      <label :for="genre.id" id="genrename">{{ genre.name }}</label>      
+      
+    <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
+    <label :for="genre.id" id="genrename">{{ genre.name }}</label>      
+    
     </span>
-    <button @click="getRecommend" class="btn btn-danger" id="push">push</button>
     <!-- <p>checked</p>
     <p>{{checked}}</p> -->
+    </div>
+    <div class="a">
+    <button @click="getRecommend" class="btn btn-danger" id="push">push</button>
     </div>
     <br>
     <br><hr id="hr"><br>
@@ -83,6 +87,14 @@ export default {
   border-radius: 20px;
 } */
 
+.a button {
+  transition: all 0.4s linear;
+}
+.a:hover button {
+  transform: scale(1.1);
+}
+
+
 .container {
   overflow: auto;
   float: left;
@@ -99,7 +111,7 @@ export default {
 
 #checkboxlist{
   background-color: rgb(25, 23, 23);
-  width: 1350px;
+  width: 900px;
   /* margin-left: 200px; */
   color: white;
   border-radius: 10px;
@@ -169,6 +181,11 @@ input[type="checkbox"]:checked::after {
   background-color: red;
   margin-left: 10px;
   margin-bottom: 10px;
+  width: 220px;
+  height: 57px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
 }
 
 #mvcardall{

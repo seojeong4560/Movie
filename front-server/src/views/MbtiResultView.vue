@@ -11,15 +11,19 @@
     </div>
     <br>
     <div id="resultbox">
-    <h1 id="h1tag">당신은</h1>
-    <p id="sub_title">{{sub_title}}</p>
+    <!-- <h1 id="h1tag">당신은</h1> -->
+    <p id="sub_title">당신은 {{sub_title}} 당신과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
     <br><br><br>
-    <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1>
-    <p id="char">{{char}}</p>
-    <br><br><br>
+    <!-- <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1> -->
+    <!-- <p id="char">{{char}}</p> -->
+    <br>
     </div>
-    <h1 id="h1tag">당신에게 이 영화를 추천드려요.</h1>
+    <div id="movieswipe">
+    <h1 id="h1tag">당신에게 아래의 영화를 추천드려요</h1>
+    <hr id="hr">
     <MovieList :movies="recommended"/>
+    </div>
+  <br><br><br>
   </div>
 </template>
 
@@ -95,6 +99,7 @@ export default {
 </script>
 
 <style scoped>
+
 #mbtititle{
   color: white;
   font-size: 30px;
@@ -103,7 +108,7 @@ export default {
 }
 
 #mbti{
-  color: rgb(235, 135, 135);
+  color: rgb(255, 0, 0);
   font-size: 60px;
 }
 
@@ -115,10 +120,10 @@ img{
 }
 
 #title{
-  color: white;
+  color: rgb(240, 71, 71);
   font-size: 30px;
   font-weight: bold;
-  font-style: italic;
+  /* font-style: italic; */
 
 }
 
@@ -126,9 +131,9 @@ img{
   color: white;
   font-size: 20px;
   /* font-weight: bold; */
-  /* font-style: italic; */
+  font-style: italic;
   /* float: left; */
-  /* padding-left: 60px; */
+  padding-left: 10px;
   /* font-weight: bold; */
   /* padding-right: 60px; */
 
@@ -166,7 +171,7 @@ img{
   margin-left: 100px;
   padding-top: 40px; */
   /* border:3px solid white; */
-  width: 500px;
+  width: 405px;
   /* border-radius:70px; */
   /* background-color: #100F0F; */
   margin-left: auto; margin-right: auto;
@@ -183,7 +188,10 @@ img{
   
 }
 
-
+#movieswipe{
+  width: 930px;
+  margin-left: auto; margin-right: auto;
+}
 
 
 

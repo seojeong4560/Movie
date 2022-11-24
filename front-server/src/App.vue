@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar">
       <a class="navbar-brand">
-        <img src="https://i.ibb.co/r5krrdz/logo.png" height=40px alt="logo" @click="home">
+        <img src="https://t1.daumcdn.net/cfile/tistory/2255384755AA0EB02C" width="200px" alt="logo" @click="home">
       </a>
       <div v-if="isUserLogin">
         <li class="nitem"><router-link :to="{ name: 'MovieView' }">MovieView</router-link></li>

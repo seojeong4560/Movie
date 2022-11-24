@@ -9,8 +9,7 @@
         <p id="movietitle">{{ movie.title }}</p>
       </div>
       <div class="info">
-        <br><br><br>
-        <star-rating :rating="movie.vote_average/2" :read-only="true" :increment="0.01"></star-rating>
+        <star-rating :rating="movie.vote_average/2" :read-only="true" :increment="0.01" id="star"></star-rating>
       </div>
     </div>
   </div>
@@ -53,9 +52,10 @@ export default {
 img{
   /* max-width: 100%; */
   transition: all 0.4s linear;
-  width: 250px;
-  height: 320px;
-  padding: 5px;
+  /* width: 450px; */
+  height: 200px;
+  /* padding: 5px; */
+
 }
 
 .a{
@@ -84,17 +84,19 @@ img{
 
 .box img {
   width: 100%;
-  padding: 5px; 
+  width: 400px;
+  padding-left: 15px; 
+  padding-right: 90px;
 }
 
 
 
 .box .info {
   color: #fff;
-  position: absolute; left: 0; top: 45%;
+  position: absolute; left: 0; top: 95%;
   /* background: rgba(0,0,0,0.5); */
   width: 100%;
-  height: 200px;
+  /* height: 200px; */
   /* padding: 15px; */
   box-sizing: border-box;
   opacity: 0;
@@ -124,7 +126,7 @@ img{
 .box .info2 {
   /* color: black; */
   /* font-weight: bolder; */
-  position: absolute; left: 0%; top: 85%;
+  position: absolute; left: 0%; top: 80%;
   /* background: rgba(15, 15, 15, 0.555); */
   width: 100%;
   height: 320px;
@@ -138,7 +140,7 @@ img{
 
 .box:hover .info2 {
   opacity: 1;
-  top: 170px;
+  top: 110px;
 }
 
 .box .info2 p {
@@ -153,7 +155,7 @@ img{
   /* color: lightgrey; */
   font-weight: 900;
   /* font-family: 'Staatliches', cursive; */
-  font-size: 1.7em;
+  font-size: 1.45em;
   text-align: center;
   /* color: BABAC1; */
   margin: 0;
@@ -161,6 +163,7 @@ img{
   -webkit-background-clip: text;
   color: transparent;
   text-shadow: -1px 0 lightgrey, 0 1px rgb(28, 27, 27), 1px 0 rgb(94, 85, 85);
+  margin-left: 14px;
 }
 
 
@@ -186,9 +189,11 @@ body {
 
 }
 
-#starrating{
-  padding-left: 39px;
-  padding-top: 5px;
+#star{
+  padding-left: 25px;
+  position: absolute;
+  bottom: 0.5px;
+
 }
 
 

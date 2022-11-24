@@ -1,18 +1,18 @@
 <template>
  <div>
   <div class="back"></div>
-  <br>
-    <h1 id="qid">Q.{{num}}</h1>
+  <div id="qbox">
+    <h1 id="qid">Q.{{num}}<span id="numq">{{num}}/12</span></h1>
     <h2 id="titleid">{{ title }}</h2>
-    <span>{{num}}/12</span>
-    <br>
+  </div>
+    <br><br>
       <div id="allbox">
     <div class="a" id="cbtn1">
-      <img :src="img1" alt="">
+      <img :src="img1" alt="" id="img1">
     <button  @click="findType(1)" class="btn btn-dark" id="choicebtn">{{ choice1 }}</button >
     </div>
     <div class="a" id="cbtn2">
-      <img :src="img2" alt="">
+      <img :src="img2" alt="" id="img2">
     <button  @click="findType(-1)" class="btn btn-dark" id="choicebtn">{{ choice2 }}</button >
       </div>
     </div>
@@ -135,21 +135,35 @@ div.back {
   z-index: -1;
 }
 
+#qbox{
+  width: 700px;
+  margin-left: auto; margin-right: auto;
+}
 
 #qid{
   color: white;
   font-size: 75px;
   /* float: left; */
-  margin-right: 550px;
+  /* margin-right: 550px; */
   font-weight: bold;
-  
-  
+  float: left;
   
 }
 
+
+#numq{
+  color: grey;
+  font-size: 25px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
 #titleid{
+  font-style: italic;
+  float: left;
   color:white;
   font-weight: bold;
+  margin-bottom: 40px;
   /* margin-left: 30px; */
   /* margin-right: 30px; */
   /* font-weight: bold; */
@@ -160,9 +174,15 @@ div.back {
   
 }
 
+/* img{
+  width: 700px;
+  height: 400px;
+  border-radius: 30px;
+  float: left;
+  margin-left: 5px;
+} */
 
-
-img{
+#img1{
   width: 700px;
   height: 400px;
   border-radius: 30px;
@@ -170,6 +190,12 @@ img{
   margin-left: 5px;
 }
 
+#img2{
+  width: 700px;
+  height: 400px;
+  border-radius: 30px;
+  float: left;
+}
 
 #cbtn1{
   float: left;
