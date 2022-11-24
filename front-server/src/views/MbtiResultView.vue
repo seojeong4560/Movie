@@ -14,6 +14,7 @@
     <div id="resultbox">
     <!-- <h1 id="h1tag">당신은</h1> -->
     <p id="sub_title">{{this.$store.state.username}}님은 {{sub_title}} {{this.$store.state.username}}과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
+
     </div>
     <!-- <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1> -->
     <!-- <p id="char">{{char}}</p> -->

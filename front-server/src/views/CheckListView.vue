@@ -67,8 +67,6 @@ export default {
         }
       })
       .then(res =>{
-        // console.log(this.checked)
-        // console.log(res)
         this.recommended = res.data.selected_genre
       })
       .catch(err => { console.log(err) })
