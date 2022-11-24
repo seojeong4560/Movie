@@ -44,6 +44,11 @@ export default {
 </script>
 
 <style scoped>
+
+#img{
+  height: 400px;
+}
+
 #imgitem{
   float: left;
   /* padding-left: 5px; */
@@ -60,7 +65,7 @@ export default {
 }
 
 .a:hover img{
-  transform: scale(1.1, 1.1);
+  transform: scale(1.05, 1.05);
   filter: brightness(20%);
   transition: all 0.8s linear;
 }
@@ -76,7 +81,7 @@ export default {
   /* border: 7px solid #283593; */
   box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   padding-left: 15px;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .box img {

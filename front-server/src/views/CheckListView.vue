@@ -15,7 +15,7 @@
     <p>{{checked}}</p> -->
     </div>
     <div class="a">
-    <button @click="getRecommend" class="btn btn-danger" id="push">push</button>
+    <button @click="getRecommend" class="btn btn-danger" id="push">{{this.$store.state.username}}님을 위한 추천 받기</button>
     </div>
     <br>
     <br><hr id="hr"><br>
@@ -110,7 +110,7 @@ export default {
 
 
 #checkboxlist{
-  background-color: rgb(25, 23, 23);
+  background-color: rgb(27, 25, 25);
   width: 900px;
   /* margin-left: 200px; */
   color: white;
@@ -182,11 +182,12 @@ input[type="checkbox"]:checked::after {
   background-color: red;
   margin-left: 10px;
   margin-bottom: 10px;
-  width: 220px;
+  width: 430px;
   height: 57px;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 8px;
+  border-radius: 30px;
 }
 
 #mvcardall{
