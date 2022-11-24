@@ -42,7 +42,7 @@ export default new Vuex.Store({
       state.latest_movies = movieList.latest_movies
       state.highscore_movies = movieList.highscore_movies
       state.like_movies = movieList.like_movies
-      console.log(state.latest_movies)
+      // console.log(state.latest_movies)
     },
     GET_GENRE_LIST(state, genres){
       state.genres = genres.genres
@@ -55,6 +55,11 @@ export default new Vuex.Store({
     LOGOUT(state){
       state.token = !state.token
       state.username = null
+      state.mbti = null,
+      state.mbti_movies = [],
+      state.mbti_title = null,
+      state.mbti_genres = [],
+
       router.push({name: 'MovieView'})
     },
     GET_MBTI(state, payload){

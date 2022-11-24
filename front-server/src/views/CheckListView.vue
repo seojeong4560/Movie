@@ -19,7 +19,7 @@
     </div>
     <br>
     <br><hr id="hr"><br>
-    <h2 id="recotitle">추천 영화</h2>
+    <h2 v-if="recommended" id="recotitle">추천 영화</h2>
     <br><br><br>
     <div id="mvcardall">
     <MovieCardList :movies="recommended"/>

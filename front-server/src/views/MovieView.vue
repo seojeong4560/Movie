@@ -18,11 +18,17 @@
       </div>
     </div>
     <br><br>
-    <h3 id="mdh3">I</h3>
-    <h2 id="h2word">{{this.$store.state.mbti_title}} {{ mbti }} {{this.$store.state.username}}님에게 추천하는 영화</h2>
-    <br><br><br>
-    <MovieList :movies="mbti_movies"/>
-    <br><hr><br>
+    <div v-if="this.$store.state.mbti">
+      <h3 id="mdh3">I</h3>
+      <h2 id="h2word">{{this.$store.state.mbti_title}} {{this.$store.state.username}}님에게 추천하는 영화</h2>
+      <br><br><br>
+      <MovieList :movies="mbti_movies"/>
+      <br><hr><br>
+    </div>
+    <div v-if="!this.$store.state.mbti" >
+      <p>아직 MBTI를 통한 영화를 추천받지 못하였네요</p>
+      <button @click="mbti">mbti로 영화추천받기</button>
+    </div>
     <h3 id="mdh3">I</h3>
     <h2 id="h2word">최신 개봉 영화</h2>
     <br><br><br>
@@ -84,6 +90,9 @@ export default {
     },
     randomMovie(){
       return this.$store.commit('RANDOM_MOVIE_PICK')
+    },
+    mbti(){
+      return this.$router.push({name: 'MbtiView'})
     }
   }
 

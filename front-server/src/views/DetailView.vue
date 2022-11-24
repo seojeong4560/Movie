@@ -13,7 +13,7 @@
         </span>
       </p>
       <p id="overview">{{movie.overview}}</p>
-      <star-rating :increment="0.01" :fixed-points="2" id="star"></star-rating>
+      <star-rating :rating="movie.vote_average/2" :read-only="true" :increment="0.01"></star-rating>
       <br>
         <!-- <button id="btn1" type="button" class="btn btn-danger">Play</button>
         <button id="btn3" type="button" class="btn btn-light"><img id="img1" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.0/72x72/2764.png" alt=""></button> 

@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar">
       <a class="navbar-brand">
-        <button id="logo" type="button" class="btn btn-danger" @click="checkList">YangGang </button>
+        <button id="logo" type="button" class="btn btn-danger" @click="home">YangGang </button>
         <!-- <img src="@/assets/logo.png" width="200px" alt="logo" @click="home" id="logo"> -->
       </a>
       <div v-if="isUserLogin">
