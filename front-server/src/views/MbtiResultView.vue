@@ -3,7 +3,7 @@
     <br><br><br>
     <div id="allbox">
     <div id="mbtibox">
-    <h1 id="mbtititle">당신의 영화 MBTI는?</h1>
+    <h1 id="mbtititle">{{this.$store.state.username}}님의 영화 MBTI는?</h1>
     <h2 id="mbti">{{ mbti }}</h2>
     <br>
     <img :src="img" alt="">
@@ -13,15 +13,14 @@
     <br>
     <div id="resultbox">
     <!-- <h1 id="h1tag">당신은</h1> -->
-    <p id="sub_title">당신은 {{sub_title}} </p>
-    <p id="sub_title">당신과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
+    <p id="sub_title">{{this.$store.state.username}}님은 {{sub_title}} {{this.$store.state.username}}과 같은 MBTI를 가진 캐릭터는 {{char}}</p>
     </div>
     <!-- <h1 id="h1tag">당신과 같은 MBTI 캐릭터는</h1> -->
     <!-- <p id="char">{{char}}</p> -->
     </div>
     <br><br><br>
     <div id="movieswipe">
-    <h1 id="h1tag">당신에게 아래의 영화를 추천드려요</h1>
+    <h1 id="h1tag">{{this.$store.state.username}}님에게 아래의 영화를 추천드려요</h1>
     <hr id="hr">
     <MovieList :movies="recommended"/>
     </div>

@@ -1,92 +1,241 @@
 # final_pjt
 
+## 팀 소개
 
 
-## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## 업무 분담
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### 변윤경
 
-## Add your files
+- Django의 Model생성 및 serializer, view 구현
+- Vue의 store 및 router구성
+- Vue의 view 및 component의 상속 관계 및 기능 구현
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### 양서정
 
+- mbti 유형 검사
+- mbti 별 추천
+
+## 목표 서비스 구현 및 실제 구현 정도
+
+
+
+## ERD
+
+### Models
+
+- Genre
+
+  ```python
+  class Genre(models.Model):
+      id = models.IntegerField(primary_key=True)
+      name = models.CharField(max_length=50)
+  
+      def __str__(self) : 
+          return self.name
+  
+  ```
+
+- Movie
+
+  ```python
+  class Movie(models.Model) :
+      id = models.IntegerField(primary_key=True)
+      genres = models.ManyToManyField(Genre)
+  
+      title = models.CharField(max_length=100)
+      release_date = models.DateField()
+      popularity = models.FloatField()
+      vote_average = models.FloatField()
+      vote_count = models.IntegerField()
+      overview = models.TextField()
+      poster_path = models.CharField(max_length=200)
+      backdrop_path = models.CharField(max_length=200)
+      
+      def __str__(self):
+          return self.title
+  ```
+
+- Comment
+
+  ```python
+  class Comment(models.Model):
+      user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+      movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+      content = models.TextField()
+      created_at = models.DateTimeField(auto_now_add=True)
+  
+      def username(self):
+          return self.user.username
+  ```
+
+- Mbti
+
+  ```python
+  class Mbti(models.Model):
+      title = models.TextField()
+      type = models.TextField()
+      choice1 = models.TextField()
+      choice2 = models.TextField()
+      picture1 = models.TextField()
+      picture2 = models.TextField()
+  ```
+
+- Detail
+
+  ```python
+  class Detail(models.Model):
+      type = models.TextField(unique=True)
+      title = models.TextField()
+      sub_title = models.TextField()
+      char = models.TextField()
+      genres = models.TextField()
+      img = models.TextField()
+  ```
+
+  
+
+
+
+![](README.assets/image-20221124234534668.png)
+
+
+
+## 영화 추천 알고리즘
+
+### 1. MBTI 검사를 통한 영화 추천 알고리즘
+
+![](README.assets/image-20221125002857030.png)
+
+![image-20221125001922668](README.assets/image-20221125001922668.png)
+
+#### 알고리즘 Detail
+
+- 버튼 클릭시 findType 함수 호출
+
+![image-20221124235642383](README.assets/image-20221124235642383.png)
+
+- 반복문을 통해 12개의 질문에서  -와 +로 EI, NS, FT, JP의 값 계산
+  - 예를 들어 
+    - E에 관련된 질문을 선택하면 `EI += 1`
+    - I에 관련된 질문을 선택하면 `EI -= 1`
+
+![image-20221124235738459](README.assets/image-20221124235738459.png)
+
+- `getMbti`메소드로 Django에 axios를 호출하여  Mbti 결과 산출
+
+![image-20221125000229446](README.assets/image-20221125000229446.png)
+
+```json
+{ "pk": 1,
+    "model": "movies.detail",
+    "fields": {
+        "type": "ISTJ",
+        "title" :  "진지한 모범생형",
+        "sub_title" : "사무적, 실용적, 현실도모적인 일을 많이 하는 유형으로서 등장인물들에게 인정받는 역할인 경우가 많습니다.",
+        "char" : "마블의 가모라, 해리 포터의 퍼시 위즐리, 반지의 제왕에 보로미르, 킹스맨의 해리가 있네요!",
+        "genres" : "역사와 사극 장르",
+        "img" : "https://p4.wallpaperbetter.com/wallpaper/912/246/383/zoe-saldana-as-gamora-in-avengers-infinity-war-4k-8k-wallpaper-preview.jpg"
+      }
+  },
 ```
-cd existing_repo
-git remote add origin https://lab.ssafy.com/forever4410/final_pjt.git
-git branch -M master
-git push -uf origin master
-```
 
-## Integrate with your tools
 
-- [ ] [Set up project integrations](https://lab.ssafy.com/forever4410/final_pjt/-/settings/integrations)
 
-## Collaborate with your team
+- getResult 메서드를 통해 MBTI 조합별 장르 리스트 계산
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+  ```python
+   getResult(){
+      if(this.EI > 0){
+        this.result = this.result + "E"
+        this.genres.push(12, 28) // 모험, 액션
+      }
+      else{
+        this.result = this.result + "I"
+        this.genres.push(16, 10751)
+      }
+      if(this.NS > 0){
+        this.result = this.result + "N"
+        this.genres.push(14, 10752)
+      }
+      else{
+        this.result = this.result + "S"
+        this.genres.push(36, 37, 99)
+      }
+      if(this.FT > 0){
+        this.result = this.result + "F"
+        this.genres.push(18, 10402, 10749)
+      }
+      else{
+        this.result = this.result + "T"
+        this.genres.push(27, 53)
+      }
+      if(this.JP > 0){
+        this.result = this.result + "J"
+        this.genres.push(80, 9648)
+      }
+      else{
+        this.result = this.result + "P"
+        this.genres.push(35, 10770)
+      }
+  ```
 
-## Test and Deploy
+  
 
-Use the built-in continuous integration in GitLab.
+### 2. 다중 장르 선택 영화 추천 알고리즘
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+![image-20221125003202323](README.assets/image-20221125003202323.png)
 
-***
+#### 알고리즘 Detail
 
-# Editing this README
+- 리스트로 값 받아 저장하기
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+![image-20221125003330643](README.assets/image-20221125003330643.png)
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+![image-20221125003347682](README.assets/image-20221125003347682.png)
 
-## Name
-Choose a self-explaining name for your project.
+- `getRecommend` 메서드로 Django에 axios호출하기
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+![image-20221125003517156](README.assets/image-20221125003517156.png)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- Django에서 선택한 장르에 속하는 영화들 중 평점이 높은 순으로 추출하여 반환![image-20221125003638494](README.assets/image-20221125003638494.png)
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+## 서비스 대표 기능
 
-## License
-For open source projects, say how it is licensed.
+### 1. MBTI 성향 검사
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+#### 1-1. 12가지 질문을 통한 MBTI 성향 검사
+
+![image-20221124234940947](README.assets/image-20221124234940947.png)
+
+![image-20221125003033931](README.assets/image-20221125003033931.png)
+
+#### 1-2 MBTI 검사 결과
+
+![](README.assets/image-20221125002747924.png)
+
+#### 1-3. MBTI 별 영화 추천
+
+![](README.assets/image-20221125002757170.png)
+
+
+
+### 영화 감상평
+
+![image-20221125004130656](README.assets/image-20221125004130656.png)
+
+
+
+## 느낀점
+
+
+

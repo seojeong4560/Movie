@@ -15,7 +15,7 @@
       <div v-else>
         <span id="uname">{{userName}}</span>
         <span id="uname2">님</span>
-        <router-link :to="{ name: 'MyPageView' }" id="mPage">MyPage</router-link>
+        <!-- <router-link :to="{ name: 'MyPageView' }" id="mPage">MyPage</router-link> -->
         <router-link :to="{ name: 'MbtiView' }" id="mbti">MyMBTI</router-link>
         <span @click="logout" id="lout">Logout</span>
       </div>

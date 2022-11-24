@@ -155,7 +155,7 @@ def comment_create(request, movie_pk):
 def recommend(request):
     if request.method == 'POST':
         selected = request.data.get("genres")
-        selected_genre = Movie.objects.filter(genres__id__in=selected).prefetch_related('genres').distinct().order_by('-vote_count')[:20]
+        selected_genre = Movie.objects.filter(genres__id__in=selected).prefetch_related('genres').distinct().order_by('-vote_average')[:50]
         recommend_serializer = MovieSerializer(data=selected_genre, many=True)
         recommend_serializer.is_valid()
 

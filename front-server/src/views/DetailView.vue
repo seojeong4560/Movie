@@ -30,7 +30,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br>
     <div id="movieList">
       <hr id = "hr">
-      <h2 id="h2word">관련 영화</h2>
+      <h2 id="h2word">"{{movie.title}}"과 비슷한 영화를 추천해드릴께요</h2>
       <MovieList :movies="sameGenres"/>
     </div>
     <br>

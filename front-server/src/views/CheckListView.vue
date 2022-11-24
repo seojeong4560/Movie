@@ -19,7 +19,7 @@
     </div>
     <br>
     <br><hr id="hr"><br>
-    <h2 v-if="recommended" id="recotitle">추천 영화</h2>
+    <h2 v-if="recommended" id="recotitle">{{this.$store.state.username}}님 오늘은 이런 영화 어떠세요? </h2>
     <br><br><br>
     <div id="mvcardall">
     <MovieCardList :movies="recommended"/>
@@ -49,6 +49,7 @@ export default {
     genres(){
       return this.$store.state.genres
     }
+
   },
   created(){
     this.getGenreList()
