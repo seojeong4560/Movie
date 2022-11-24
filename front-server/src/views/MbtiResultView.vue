@@ -18,7 +18,7 @@
     <br><br><br><br><br>
     <p id="char">{{char}}</p>
     <h1 id="h1tag">당신에게 아래 장르를 추천드려요.</h1>
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br><br>
     <p id="genres">{{genres}}</p>
     <br><br><br><br>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="back"><img id="backimg" src="https://i.pinimg.com/originals/e9/54/b2/e954b2d4f79c1da0909f38f6050a30d7.jpg" alt=""></div>
+    <div class="back"></div>
     <br><br>
     <h1 id="SignUpPageMessage">Unlimited movies, TV shows, and more.</h1>
     <h2 id="SignUpPageMessage2">Watch anywhere. Cancel anytime.</h2>
@@ -17,6 +17,7 @@
       <br>
       <input id="sigunUpbtn" type="submit" value="SignUp" class="btn btn-danger">
     </form>
+    <img src="https://t1.daumcdn.net/cfile/tistory/2255384755AA0EB02C" alt="">
   </div>
 </template>
 
@@ -59,6 +60,8 @@ div.back {
   
   
 }
+
+
 
 #backimg{
   width: 1900px;

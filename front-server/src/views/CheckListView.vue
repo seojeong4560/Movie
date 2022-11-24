@@ -9,14 +9,17 @@
       <input type="checkbox" v-model="checked" :value="genre.id" :id="genre.id">
       <label :for="genre.id" id="genrename">{{ genre.name }}</label>      
     </span>
-    <button @click="getRecommend">push</button>
+    <button @click="getRecommend" class="btn btn-danger" id="push">push</button>
     <!-- <p>checked</p>
     <p>{{checked}}</p> -->
     </div>
-    <br><hr><br>
-    <h2>추천 영화</h2>
+    <br>
+    <br><hr id="hr"><br>
+    <h2 id="recotitle">추천 영화</h2>
     <br><br><br>
+    <div id="mvcardall">
     <MovieCardList :movies="recommended"/>
+    </div>
     <br><br>
   </div>
 </template>
@@ -95,8 +98,8 @@ export default {
 
 
 #checkboxlist{
-  background-color: rgb(38, 35, 35);
-  width: 800px;
+  background-color: rgb(25, 23, 23);
+  width: 1350px;
   /* margin-left: 200px; */
   color: white;
   border-radius: 10px;
@@ -108,10 +111,13 @@ export default {
 input{
   margin-left: 20px;
   margin-top: 20px;
+  margin-right: 10px;
+  
 }
 
 #genrename{
   font-size: 25px;
+
 }
 
 input[type="checkbox"] {
@@ -126,6 +132,7 @@ input[type="checkbox"] {
   width: 25px;
   height: 25px;
 }
+
 input[type="checkbox"]::after {
   border: solid #fff;
   border-width: 0 2px 2px 0;
@@ -137,12 +144,36 @@ input[type="checkbox"]::after {
   top: 20%;
   transform: rotate(45deg);
   width: 15%;
+  
 }
 input[type="checkbox"]:checked {
-  background: #505bf0;
+  background: red;
+  border-radius: 5px;
 }
 input[type="checkbox"]:checked::after {
   display: block;
+}
+
+#hr{
+  color: #babac1;
+  height: 15px;
+}
+
+#recotitle{
+  color: azure;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+#push{
+  background-color: red;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#mvcardall{
+  margin-left: 100px; 
+  margin-right: auto;
 }
 
 /* 수정 */

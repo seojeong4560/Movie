@@ -7,11 +7,11 @@
     <br>
     <div class="a" id="cbtn1">
       <img src="https://img.etnews.com/cms/uploadfiles/afieldfile/2013/09/16/477971_20130916112920_346_0001.jpg" alt="">
-    <button  @click="findType(1)" class="btn btn-light" id="choicebtn">{{ choice1 }}</button >
+    <button  @click="findType(1)" class="btn btn-dark" id="choicebtn">{{ choice1 }}</button >
     </div>
     <div class="a" id="cbtn2">
       <img src="https://img.insight.co.kr/static/2021/07/02/700/img_20210702112100_f33w552m.webp" alt="">
-    <button  @click="findType(-1)" class="btn btn-light" id="choicebtn">{{ choice2 }}</button >
+    <button  @click="findType(-1)" class="btn btn-dark" id="choicebtn">{{ choice2 }}</button >
     </div>
   </div>
   
@@ -176,8 +176,10 @@ img{
   border-radius: 15px;
   /* border: 0.5px solid; */
   font-size: 20px;
-  color: black;
+  color: white;
   font-weight: bold;
+  /* background-color: rgb(23, 22, 22); */
+  /* border: solid rgb(23, 22, 22); */
 
 }
 

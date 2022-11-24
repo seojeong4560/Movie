@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div class="back"><img id="backimg" src="https://i.pinimg.com/originals/e9/54/b2/e954b2d4f79c1da0909f38f6050a30d7.jpg" alt=""></div>
-  <br><br>
+  <div class="back"></div>
+  <br><br><br><br>
   <div id="Loginbox">
   <form @submit.prevent="logIn">
   <h1 id="LogInPage">LogIn Page</h1>
@@ -17,6 +17,7 @@
       <input id="submit_logIn" type="submit" value="logIn" class="btn btn-danger" >
   </form>
   </div>
+  <img id="img2" src="https://p4.wallpaperbetter.com/wallpaper/760/67/719/monsters-inc-movies-wallpaper-preview.jpg" alt="">
 </div>
 </template>
 
@@ -55,17 +56,19 @@ div.back {
   filter: brightness(65%)
 }
 
-#backimg{
+/* #backimg{
   width: 1900px;
   height: 800px;
-}
+} */
 
 #Loginbox{
   width: 600px;
   height: 500px;
-  background-color: black;
-  background-color: rgba( 0, 0, 0, 0.8 );
+  /* background-color: black;
+  background-color: rgba( 0, 0, 0, 0.8 ); */
+  background-color: rgb(26, 24, 24);
   margin: auto;
+  border-radius: 10px ;
 }
 
 #LogInPage{
@@ -103,4 +106,26 @@ div.back {
   height: 45px;
   background-color: red;
 }
+
+
+#img1{
+  float: left;
+  /* height: 500px; */
+  width: 450px;
+  margin-top: 170px;
+
+
+}
+
+#img2{
+  float: right;
+  z-index: -1;
+  /* width: 500px; */
+  position: absolute;
+  top: 450px;
+  right: 0px;
+  
+}
+  
+
 </style>
